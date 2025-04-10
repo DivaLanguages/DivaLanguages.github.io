@@ -3,49 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Class Scheduler</title>
+  <title>Manage Your Class</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background: #f0f0f0;
     }
-    h1 {
-      margin-bottom: 40px;
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
     }
+
+    header img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin-top: 20px;
+      font-size: 26px;
+      color: #333;
+    }
+
     .button-container {
       display: flex;
-      gap: 20px;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 20px;
+      padding: 30px;
     }
+
     .custom-button {
-      padding: 20px 30px;
+      padding: 15px 30px;
       font-size: 18px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      background: #007bff;
+      background: #0066cc;
       color: white;
       text-decoration: none;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+
     .custom-button:hover {
-      background: #0056b3;
+      background: #004999;
+    }
+
+    @media (max-width: 600px) {
+      .custom-button {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Manage Your Class</h1>
+
+  <header>
+    <img src="bona.png" alt="Instructor Photo">
+    <h1>Welcome! I’m excited to help you learn 😊</h1>
+  </header>
+
   <div class="button-container">
     <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog" target="_blank">Book a New Class</a>
     <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdR-olXRpc4XBUiytXA75Igt65dJJ9D-vx5ZiCHINSM_aoNZQ/viewform?usp=dialog" target="_blank">Modify a Class</a>
     <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQ_APdatyfIHT8hKJsTpb5g5HfeUfdWTMNEFXoXbUz2QgDw/viewform?usp=dialog" target="_blank">Cancel a Class</a>
   </div>
+
 </body>
 </html>
