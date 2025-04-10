@@ -5,65 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Manage Your Class</title>
   <style>
+    :root {
+      --primary-color: #4A90E2;
+      --hover-color: #357ABD;
+      --background-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-color: #333;
+      --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
     }
 
     header {
+      width: 100%;
       text-align: center;
-      padding: 40px 20px 20px;
+      padding: 60px 20px 30px;
+      background: linear-gradient(to right, #4A90E2, #50a6e6);
+      color: white;
     }
 
     header img {
-      width: 180px;
-      height: 180px;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
       border-radius: 50%;
       border: 6px solid white;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow);
     }
 
     header h1 {
-      margin-top: 20px;
-      font-size: 26px;
-      color: #333;
+      font-size: 32px;
+      margin: 20px 0 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 40px;
+      box-shadow: var(--shadow);
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
     }
 
     .button-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 30px;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
     }
 
     .custom-button {
-      padding: 15px 30px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      background: #0066cc;
+      background-color: var(--primary-color);
       color: white;
       text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 15px 20px;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: var(--shadow);
     }
 
     .custom-button:hover {
-      background: #004999;
+      background-color: var(--hover-color);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
     }
 
     @media (max-width: 600px) {
+      header h1 {
+        font-size: 24px;
+      }
+
       .custom-button {
-        width: 100%;
-        text-align: center;
+        font-size: 16px;
       }
     }
   </style>
@@ -72,14 +110,28 @@
 
   <header>
     <img src="bona.png" alt="Instructor Photo">
-    <h1>Welcome! I’m excited to help you learn 😊</h1>
+    <h1>Welcome to Your English Class Hub</h1>
+    <p>Here you can book, modify or cancel your class with ease.</p>
   </header>
 
-  <div class="button-container">
-    <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog" target="_blank">Book a New Class</a>
-    <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdR-olXRpc4XBUiytXA75Igt65dJJ9D-vx5ZiCHINSM_aoNZQ/viewform?usp=dialog" target="_blank">Modify a Class</a>
-    <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQ_APdatyfIHT8hKJsTpb5g5HfeUfdWTMNEFXoXbUz2QgDw/viewform?usp=dialog" target="_blank">Cancel a Class</a>
+  <div class="card">
+    <h2>Manage Your Class</h2>
+    <div class="button-container">
+      <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog" target="_blank">
+        📘 Book a New Class
+      </a>
+      <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdR-olXRpc4XBUiytXA75Igt65dJJ9D-vx5ZiCHINSM_aoNZQ/viewform?usp=dialog" target="_blank">
+        📝 Modify a Class
+      </a>
+      <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQ_APdatyfIHT8hKJsTpb5g5HfeUfdWTMNEFXoXbUz2QgDw/viewform?usp=dialog" target="_blank">
+        ❌ Cancel a Class
+      </a>
+    </div>
   </div>
+
+  <footer>
+    © 2025 Your English Coach · All rights reserved
+  </footer>
 
 </body>
 </html>
