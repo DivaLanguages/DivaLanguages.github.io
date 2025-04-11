@@ -35,6 +35,12 @@
       position: relative;
     }
 
+    header .free-button-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
     header img.profile {
       width: 160px;
       height: 160px;
@@ -66,8 +72,6 @@
       transition: background-color 0.3s, transform 0.2s;
       box-shadow: var(--shadow);
       text-decoration: none;
-      display: inline-block;
-      margin-bottom: 16px;
     }
 
     .free-classes-button:hover {
@@ -183,16 +187,18 @@
 <body>
 
   <header>
-    <!-- Botón "Free Classes" centrado arriba de la imagen -->
-    <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
+    <!-- Botón Free Classes centrado y justo encima de la imagen -->
+    <div class="free-button-wrapper">
+      <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
+    </div>
 
-    <!-- Foto de perfil -->
+    <!-- Imagen del instructor -->
     <img src="bona.png" alt="Instructor Photo" class="profile">
 
     <h1>Welcome to your language home</h1>
     <p>-With each language, you live a new life-</p>
 
-    <!-- Redes sociales en una zona sombreada pequeña -->
+    <!-- Redes sociales -->
     <div class="social-box">
       <a href="https://www.instagram.com/dv_lingo/" target="_blank">
         <img src="instagram.png" alt="Instagram">
@@ -237,4 +243,3 @@
 
 </body>
 </html>
-
