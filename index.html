@@ -54,12 +54,6 @@
       margin: 0;
     }
 
-    .top-right {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-
     .free-classes-button {
       background-color: white;
       color: var(--primary-color);
@@ -72,6 +66,8 @@
       transition: background-color 0.3s, transform 0.2s;
       box-shadow: var(--shadow);
       text-decoration: none;
+      display: inline-block;
+      margin-bottom: 16px;
     }
 
     .free-classes-button:hover {
@@ -142,18 +138,16 @@
     }
 
     .social-box {
-      margin-top: 14px;
-      padding: 6px 10px;
+      margin-top: 10px;
+      padding: 4px 8px;
       background-color: #ffffff;
-      border-radius: 10px;
+      border-radius: 8px;
       box-shadow: var(--shadow);
-      display: flex;
+      display: inline-flex;
       justify-content: center;
-      gap: 14px;
+      gap: 10px;
       align-items: center;
-      max-width: 160px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: fit-content;
     }
 
     .social-box a img {
@@ -189,15 +183,16 @@
 <body>
 
   <header>
-    <div class="top-right">
-      <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
-    </div>
+    <!-- Botón "Free Classes" centrado arriba de la imagen -->
+    <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
 
+    <!-- Foto de perfil -->
     <img src="bona.png" alt="Instructor Photo" class="profile">
+
     <h1>Welcome to your language home</h1>
     <p>-With each language, you live a new life-</p>
 
-    <!-- Redes sociales en zona sombreada -->
+    <!-- Redes sociales en una zona sombreada pequeña -->
     <div class="social-box">
       <a href="https://www.instagram.com/dv_lingo/" target="_blank">
         <img src="instagram.png" alt="Instagram">
@@ -242,3 +237,4 @@
 
 </body>
 </html>
+
