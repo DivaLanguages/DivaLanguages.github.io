@@ -164,28 +164,26 @@
 
     .social-box {
       margin-top: 20px;
-      padding: 15px 20px;
+      padding: 8px 12px;
       background-color: #ffffff;
-      border-radius: 16px;
+      border-radius: 12px;
       box-shadow: var(--shadow);
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 16px;
       align-items: center;
-      flex-wrap: wrap;
+      max-width: 220px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .social-box a {
-      display: inline-block;
-    }
-
-    .social-icon {
-      width: 21.33px; /* 33% menos que 32px */
-      height: 21.33px;
+    .social-box a img {
+      width: 21px;
+      height: 21px;
       transition: transform 0.2s;
     }
 
-    .social-icon:hover {
+    .social-box a img:hover {
       transform: scale(1.1);
     }
 
@@ -230,16 +228,16 @@
     <h1>Welcome to your language home</h1>
     <p>-With each language, you live a new life-</p>
 
-    <!-- Nueva sección de íconos sociales -->
+    <!-- Redes sociales -->
     <div class="social-box">
       <a href="https://www.instagram.com/dv_lingo/" target="_blank">
-        <img src="instagram.png" alt="Instagram" class="social-icon">
+        <img src="instagram.png" alt="Instagram">
       </a>
       <a href="https://www.instagram.com/dv_lingo/" target="_blank">
-        <img src="Facebook.png" alt="Facebook" class="social-icon">
+        <img src="Facebook.png" alt="Facebook">
       </a>
       <a href="https://www.instagram.com/dv_lingo/" target="_blank">
-        <img src="Tiktok.png" alt="TikTok" class="social-icon">
+        <img src="Tiktok.png" alt="TikTok">
       </a>
     </div>
   </header>
@@ -275,5 +273,4 @@
 
 </body>
 </html>
-
 
