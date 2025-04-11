@@ -38,9 +38,9 @@
     .top-right-buttons {
       position: absolute;
       top: 20px;
-      right: 20px;
+      right: 30px; /* Más espacio desde el borde */
       display: flex;
-      gap: 10px;
+      gap: 12px;
       align-items: center;
     }
 
@@ -133,10 +133,17 @@
       transform: translateY(-2px);
     }
 
+    .calendar-title {
+      margin-top: 50px;
+      font-size: 26px;
+      color: var(--primary-color);
+      text-align: center;
+    }
+
     .calendar-container {
       width: 95%;
       max-width: 1500px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     .calendar-container iframe {
@@ -206,6 +213,9 @@
     </div>
   </div>
 
+  <!-- Título del calendario -->
+  <h2 class="calendar-title">Check My Calendar</h2>
+
   <div class="calendar-container">
     <iframe src="https://calendar.google.com/calendar/embed?src=a42878222658e306f920a68b096d7cf29c51cb57e442a09aab1cbb32a206d7e3%40group.calendar.google.com&ctz=Europe%2FMadrid"></iframe>
   </div>
@@ -216,4 +226,3 @@
 
 </body>
 </html>
-
