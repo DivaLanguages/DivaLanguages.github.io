@@ -35,6 +35,50 @@
       position: relative;
     }
 
+    .top-right-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .instagram-button {
+      width: 32px;
+      height: 32px;
+      background-image: url('instagram.png');
+      background-size: cover;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s;
+    }
+
+    .instagram-button:hover {
+      transform: scale(1.1);
+    }
+
+    .free-classes-button {
+      background-color: white;
+      color: var(--primary-color);
+      font-weight: 600;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+    }
+
+    .free-classes-button:hover {
+      background-color: #e0ebf8;
+      transform: translateY(-1px);
+    }
+
     header img {
       width: 160px;
       height: 160px;
@@ -52,25 +96,6 @@
     header p {
       font-size: 18px;
       margin: 0;
-    }
-
-    .instagram-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 32px;
-      height: 32px;
-      background-image: url('instagram.png');
-      background-size: cover;
-      border: none;
-      cursor: pointer;
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s;
-    }
-
-    .instagram-button:hover {
-      transform: scale(1.1);
     }
 
     .card {
@@ -109,13 +134,14 @@
     }
 
     .calendar-container {
-      margin-top: 30px;
-      width: 100%;
+      width: 95%;
+      max-width: 1500px;
+      margin-top: 40px;
     }
 
     .calendar-container iframe {
       width: 100%;
-      height: 300px;
+      height: 600px;
       border: none;
       box-shadow: var(--shadow);
       border-radius: 8px;
@@ -138,14 +164,17 @@
       }
 
       .instagram-button {
-        top: 15px;
-        right: 15px;
         width: 28px;
         height: 28px;
       }
 
+      .free-classes-button {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+
       .calendar-container iframe {
-        height: 250px;
+        height: 500px;
       }
     }
   </style>
@@ -153,7 +182,10 @@
 <body>
 
   <header>
-    <a href="https://www.instagram.com/dv_lingo/" target="_blank" class="instagram-button"></a>
+    <div class="top-right-buttons">
+      <a href="https://www.instagram.com/dv_lingo/" target="_blank" class="instagram-button"></a>
+      <a href="https://your-link-to-free-classes.com" target="_blank" class="free-classes-button">Free Classes</a>
+    </div>
     <img src="bona.png" alt="Instructor Photo">
     <h1>Welcome to your language home</h1>
     <p>-With each language, you live a new life-</p>
@@ -172,14 +204,10 @@
         ❌ Cancel a Class
       </a>
     </div>
+  </div>
 
-    <div class="calendar-container">
-      <iframe 
-        src="https://calendar.google.com/calendar/embed?src=charlottebro2003@gmail.com&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA" 
-        frameborder="0" 
-        scrolling="no">
-      </iframe>
-    </div>
+  <div class="calendar-container">
+    <iframe src="https://calendar.google.com/calendar/embed?src=a42878222658e306f920a68b096d7cf29c51cb57e442a09aab1cbb32a206d7e3%40group.calendar.google.com&ctz=Europe%2FMadrid"></iframe>
   </div>
 
   <footer>
@@ -188,3 +216,4 @@
 
 </body>
 </html>
+
