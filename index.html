@@ -1,40 +1,224 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Social Media Icons</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Your Class</title>
   <style>
+    :root {
+      --primary-color: #4A90E2;
+      --hover-color: #357ABD;
+      --background-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-color: #333;
+      --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
     body {
-      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      text-align: center;
+      padding: 60px 20px 30px;
+      background: linear-gradient(to right, #4A90E2, #50a6e6);
+      color: white;
+      position: relative;
+    }
+
+    header img.profile {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid white;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 20px 0 10px;
+    }
+
+    header p {
+      font-size: 18px;
       margin: 0;
     }
 
-    .container {
-      background-color: #e0e0e0;
-      border-radius: 30px;
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    .top-right {
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
 
-    .icon {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
+    .free-classes-button {
+      background-color: white;
+      color: var(--primary-color);
+      font-weight: 600;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+    }
+
+    .free-classes-button:hover {
+      background-color: #e0ebf8;
+      transform: translateY(-1px);
+    }
+
+    .social-container {
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 12px 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-container a img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      transition: transform 0.2s;
+    }
+
+    .social-container a img:hover {
+      transform: scale(1.1);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 40px;
+      box-shadow: var(--shadow);
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .custom-button {
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: var(--shadow);
+    }
+
+    .custom-button:hover {
+      background-color: var(--hover-color);
+      transform: translateY(-2px);
+    }
+
+    .calendar-label {
+      margin-top: 40px;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    .calendar-container {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .calendar-container iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 24px;
+      }
+
+      .custom-button {
+        font-size: 16px;
+      }
+
+      .free-classes-button {
+        font-size: 12px;
+        padding: 6px 10px;
+      }
+
+      .calendar-container iframe {
+        height: 250px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="instagram.png" alt="Instagram" class="icon">
-    <img src="Facebook.png" alt="Facebook" class="icon">
-    <img src="Tiktok.png" alt="TikTok" class="icon">
-  </div>
-</body>
-</html>
+
+  <header>
+    <div class="top-right">
+      <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
+    </div>
+
+    <img src="bona.png" alt="Instructor Photo" class="profile">
+    <h1>Welcome to your language home</h1>
+    <p>-With each language, you live a new life-</p>
+
+    <!-- 🔗 Social Media Icons -->
+    <div class="social-container">
+      <a href="https://www.instagram.com/dv_lingo/" target="_blank">
+        <img src="instagram.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/dvlingo" target="_blank">
+        <img src="Facebook.png" alt="Facebook">
+      </a>
+      <a href="https://www.tiktok.com/@dvlingo" target="_blank">
+        <img src="Tiktok.png" alt="TikTok">
+      </a>
+    </div>
+  </header>
+
+  <div class="card">
+    <h2>Manage Your Class</h2>
+    <div class="button-container">
+      <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog" target="_blank">
+        📘 Book a New Class
+      </a>
+      <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdR-olXRpc4XBUiytXA75Igt65dJJ9D-vx5ZiCHINSM_aoNZQ/viewform?usp=dialog" target="_blank">
+        📝 Modify a Class
+      </a>
+      <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQ_APdatyfIHT8hKJsTpb5g5HfeUfdWTMNEFXo_
