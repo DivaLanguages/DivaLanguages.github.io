@@ -109,14 +109,14 @@
         }
 
         .calendar-container {
-            width: 90%;
-            max-width: 1000px;
+            width: 100%;
+            max-width: 400px; /* Más estrecho */
             margin-top: 40px;
         }
 
         .calendar-container iframe {
             width: 100%;
-            height: 600px;
+            height: 300px; /* Mucho más bajo */
             border: none;
             box-shadow: var(--shadow);
             border-radius: 8px;
@@ -146,7 +146,7 @@
             }
 
             .calendar-container iframe {
-                height: 500px;
+                height: 250px; /* Responsive */
             }
         }
     </style>
@@ -176,7 +176,11 @@
     </div>
 
     <div class="calendar-container">
-        <iframe src="https://calendar.google.com/calendar/embed?src=charlottebro2003@gmail.com&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA" style="border: 0" frameborder="0" scrolling="no"></iframe>
+        <iframe 
+            src="https://calendar.google.com/calendar/embed?src=charlottebro2003@gmail.com&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA" 
+            frameborder="0" 
+            scrolling="no">
+        </iframe>
     </div>
 
     <footer>
