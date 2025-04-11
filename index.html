@@ -35,7 +35,7 @@
       position: relative;
     }
 
-    header img {
+    header img.profile {
       width: 160px;
       height: 160px;
       object-fit: cover;
@@ -54,31 +54,29 @@
       margin: 0;
     }
 
-    .top-buttons {
+    .top-left,
+    .top-right {
       position: absolute;
       top: 20px;
+    }
+
+    .top-left {
       left: 20px;
     }
 
-    .top-buttons-right {
-      position: absolute;
-      top: 20px;
+    .top-right {
       right: 20px;
     }
 
-    .instagram-button {
+    .instagram-button img {
       width: 32px;
       height: 32px;
-      background-image: url('instagram.png');
-      background-size: cover;
-      border: none;
-      cursor: pointer;
       border-radius: 8px;
       box-shadow: var(--shadow);
       transition: transform 0.2s;
     }
 
-    .instagram-button:hover {
+    .instagram-button img:hover {
       transform: scale(1.1);
     }
 
@@ -172,7 +170,7 @@
         font-size: 16px;
       }
 
-      .instagram-button {
+      .instagram-button img {
         width: 28px;
         height: 28px;
       }
@@ -191,14 +189,16 @@
 <body>
 
   <header>
-    <div class="top-buttons">
-      <a href="https://www.instagram.com/dv_lingo/" target="_blank" class="instagram-button"></a>
+    <div class="top-left">
+      <a href="https://www.instagram.com/dv_lingo/" target="_blank" class="instagram-button">
+        <img src="instagram.png" alt="Instagram">
+      </a>
     </div>
-    <div class="top-buttons-right">
+    <div class="top-right">
       <a href="https://your-link-to-free-classes.com" target="_blank" class="free-classes-button">Free Classes</a>
     </div>
 
-    <img src="bona.png" alt="Instructor Photo">
+    <img src="bona.png" alt="Instructor Photo" class="profile">
     <h1>Welcome to your language home</h1>
     <p>-With each language, you live a new life-</p>
   </header>
