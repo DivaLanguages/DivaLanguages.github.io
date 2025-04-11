@@ -54,17 +54,18 @@
       margin: 0;
     }
 
-    .highlight-section {
-      margin-top: 20px;
-      padding: 15px 20px;
-      background-color: #e9f2fb;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    .top-left,
+    .top-right {
+      position: absolute;
+      top: 20px;
+    }
+
+    .top-left {
+      left: 20px;
+    }
+
+    .top-right {
+      right: 20px;
     }
 
     .instagram-button img {
@@ -73,6 +74,7 @@
       border-radius: 8px;
       box-shadow: var(--shadow);
       transition: transform 0.2s;
+      margin-left: 8px;
     }
 
     .instagram-button img:hover {
@@ -188,19 +190,18 @@
 <body>
 
   <header>
-    <img src="bona.png" alt="Instructor Photo" class="profile">
-    <h1>Welcome to your language home</h1>
-    <p>-With each language, you live a new life-</p>
-
-    <!-- Zona sombreada debajo del texto -->
-    <div class="highlight-section">
+    <div class="top-left">
       <a href="https://www.instagram.com/dv_lingo/" target="_blank" class="instagram-button">
         <img src="instagram.png" alt="Instagram">
       </a>
-      <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">
-        Go to: Free Classes
-      </a>
     </div>
+    <div class="top-right">
+      <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
+    </div>
+
+    <img src="bona.png" alt="Instructor Photo" class="profile">
+    <h1>Welcome to your language home</h1>
+    <p>-With each language, you live a new life-</p>
   </header>
 
   <div class="card">
@@ -234,3 +235,13 @@
 
 </body>
 </html>
+
+
+
+  <footer>
+    © Your English/Indonesian Coach · All rights reserved
+  </footer>
+
+</body>
+</html>
+
