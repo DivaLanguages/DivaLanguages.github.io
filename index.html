@@ -62,7 +62,6 @@
 
     .top-left {
       left: 20px;
-      padding-left: 10px;
     }
 
     .top-right {
@@ -75,6 +74,7 @@
       border-radius: 8px;
       box-shadow: var(--shadow);
       transition: transform 0.2s;
+      margin-left: 8px;
     }
 
     .instagram-button img:hover {
@@ -133,6 +133,13 @@
     .custom-button:hover {
       background-color: var(--hover-color);
       transform: translateY(-2px);
+    }
+
+    .calendar-label {
+      margin-top: 40px;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text-color);
     }
 
     .calendar-container {
@@ -211,7 +218,7 @@
       </a>
     </div>
 
-    <h2>Check My Calendar</h2>
+    <h2 class="calendar-label">Check My Calendar</h2>
 
     <div class="calendar-container">
       <iframe 
@@ -228,4 +235,5 @@
 
 </body>
 </html>
+
 
