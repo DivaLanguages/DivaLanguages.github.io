@@ -54,12 +54,12 @@
       margin: 0;
     }
 
-    .oval-instagram {
+    .instagram-box {
       margin-top: 20px;
       background-color: rgba(0, 0, 0, 0.05);
       width: 180px;
-      height: 60px;
-      border-radius: 50% / 50%;
+      height: 50px;
+      border-radius: 12px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -68,42 +68,21 @@
       margin-right: auto;
     }
 
-    .oval-instagram img {
+    .instagram-box img {
       width: 32px;
       height: 32px;
       border-radius: 8px;
       transition: transform 0.2s;
     }
 
-    .oval-instagram img:hover {
+    .instagram-box img:hover {
       transform: scale(1.1);
     }
 
-    .top-left,
     .top-right {
       position: absolute;
       top: 20px;
-    }
-
-    .top-left {
-      left: 20px;
-    }
-
-    .top-right {
       right: 20px;
-    }
-
-    .instagram-button img {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s;
-      margin-left: 8px;
-    }
-
-    .instagram-button img:hover {
-      transform: scale(1.1);
     }
 
     .free-classes-button {
@@ -196,11 +175,6 @@
         font-size: 16px;
       }
 
-      .instagram-button img {
-        width: 28px;
-        height: 28px;
-      }
-
       .free-classes-button {
         font-size: 12px;
         padding: 6px 10px;
@@ -215,11 +189,6 @@
 <body>
 
   <header>
-    <div class="top-left">
-      <a href="https://www.instagram.com/dv_lingo/" target="_blank" class="instagram-button">
-        <img src="instagram.png" alt="Instagram">
-      </a>
-    </div>
     <div class="top-right">
       <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
     </div>
@@ -228,9 +197,9 @@
     <h1>Welcome to your language home</h1>
     <p>-With each language, you live a new life-</p>
 
-    <!-- Nuevo contenedor ovalado con icono de Instagram -->
+    <!-- Rectángulo con bordes redondeados e icono de Instagram -->
     <a href="https://www.instagram.com/dv_lingo/" target="_blank">
-      <div class="oval-instagram">
+      <div class="instagram-box">
         <img src="instagram.png" alt="Instagram Icon">
       </div>
     </a>
