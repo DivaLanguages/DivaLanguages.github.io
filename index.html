@@ -15,16 +15,33 @@
       --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--background-color);
       color: var(--text-color);
+      height: 100%;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
     }
 
     header {
@@ -33,12 +50,12 @@
       padding: 40px 20px 30px;
       background: linear-gradient(to right, #4A90E2, #50a6e6);
       color: white;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    header .free-button-wrapper {
-      display: flex;
-      justify-content: center;
+    .free-button-wrapper {
       margin-bottom: 20px;
     }
 
@@ -46,18 +63,24 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 15px;
     }
 
-    header img.profile {
+    .profile {
       width: 160px;
       height: 160px;
       object-fit: cover;
       border-radius: 50%;
       border: 6px solid white;
       box-shadow: var(--shadow);
+      transition: transform 0.3s;
     }
 
-    header h1 {
+    .profile:hover {
+      transform: scale(1.03);
+    }
+
+    h1 {
       font-size: 32px;
       margin: 25px 0 10px;
     }
@@ -87,10 +110,31 @@
       transform: translateY(-1px);
     }
 
+    .social-box {
+      background-color: var(--highlight-bg);
+      border-radius: 10px;
+      padding: 10px 26px;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-box a img {
+      width: 21px;
+      height: 21px;
+      transition: transform 0.2s;
+    }
+
+    .social-box a img:hover {
+      transform: scale(1.15);
+    }
+
     .card {
       background: var(--card-bg);
-      border-radius: 12px;
-      padding: 30px;
+      border-radius: 16px;
+      padding: 40px 30px;
       margin-top: 40px;
       box-shadow: var(--shadow);
       width: 90%;
@@ -102,7 +146,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     .custom-button {
@@ -123,10 +167,9 @@
     }
 
     .calendar-label {
-      margin-top: 40px;
+      margin-top: 45px;
       font-size: 24px;
       font-weight: 600;
-      color: var(--text-color);
     }
 
     .calendar-container {
@@ -143,36 +186,15 @@
     }
 
     footer {
-      margin-top: auto;
+      width: 100%;
+      text-align: center;
       padding: 20px;
       font-size: 14px;
       color: #777;
     }
 
-    .social-box {
-      margin-top: 18px;
-      padding: 10px 26px;
-      background-color: var(--highlight-bg);
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      display: inline-flex;
-      justify-content: center;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .social-box a img {
-      width: 21px;
-      height: 21px;
-      transition: transform 0.2s;
-    }
-
-    .social-box a img:hover {
-      transform: scale(1.1);
-    }
-
     @media (max-width: 600px) {
-      header h1 {
+      h1 {
         font-size: 24px;
       }
 
@@ -187,6 +209,10 @@
 
       .calendar-container iframe {
         height: 250px;
+      }
+
+      .card {
+        padding: 30px 20px;
       }
     }
   </style>
@@ -205,43 +231,45 @@
         <a href="https://www.instagram.com/dv_lingo/" target="_blank">
           <img src="instagram.png" alt="Instagram">
         </a>
-        <a href="https://www.facebook.com/profile.php?id=61573026435396" target="_blank">
+        <a href="https://www.instagram.com/dv_lingo/" target="_blank">
           <img src="Facebook.png" alt="Facebook">
         </a>
-        <a href="https://www.tiktok.com/@divss75?_t=ZS-8vT45GJRlqc&_r=1" target="_blank">
+        <a href="https://www.instagram.com/dv_lingo/" target="_blank">
           <img src="Tiktok.png" alt="TikTok">
         </a>
       </div>
     </div>
 
     <h1>Welcome to your language home</h1>
-    <p>-With each language, you live a new life-</p>
+    <p>- With each language, you live a new life -</p>
   </header>
 
-  <div class="card">
-    <h2>Manage Your Class</h2>
-    <div class="button-container">
-      <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog" target="_blank">
-        📘 Book a New Class
-      </a>
-      <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdR-olXRpc4XBUiytXA75Igt65dJJ9D-vx5ZiCHINSM_aoNZQ/viewform?usp=dialog" target="_blank">
-        📝 Modify a Class
-      </a>
-      <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQ_APdatyfIHT8hKJsTpb5g5HfeUfdWTMNEFXoXbUz2QgDw/viewform?usp=dialog" target="_blank">
-        ❌ Cancel a Class
-      </a>
-    </div>
+  <main>
+    <div class="card">
+      <h2>Manage Your Class</h2>
+      <div class="button-container">
+        <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog" target="_blank">
+          📘 Book a New Class
+        </a>
+        <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdR-olXRpc4XBUiytXA75Igt65dJJ9D-vx5ZiCHINSM_aoNZQ/viewform?usp=dialog" target="_blank">
+          📝 Modify a Class
+        </a>
+        <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQ_APdatyfIHT8hKJsTpb5g5HfeUfdWTMNEFXoXbUz2QgDw/viewform?usp=dialog" target="_blank">
+          ❌ Cancel a Class
+        </a>
+      </div>
 
-    <h2 class="calendar-label">Check My Calendar</h2>
+      <h2 class="calendar-label">Check My Calendar</h2>
 
-    <div class="calendar-container">
-      <iframe 
-        src="https://calendar.google.com/calendar/embed?src=charlottebro2003@gmail.com&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA" 
-        frameborder="0" 
-        scrolling="no">
-      </iframe>
+      <div class="calendar-container">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=charlottebro2003@gmail.com&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA" 
+          frameborder="0" 
+          scrolling="no">
+        </iframe>
+      </div>
     </div>
-  </div>
+  </main>
 
   <footer>
     © Your English/Indonesian Coach · All rights reserved
@@ -249,3 +277,4 @@
 
 </body>
 </html>
+
