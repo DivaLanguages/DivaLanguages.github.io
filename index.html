@@ -15,33 +15,23 @@
       --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
+    body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--background-color);
       color: var(--text-color);
-      height: 100%;
-    }
-
-    body {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
 
-    main {
-      flex: 1;
+    .page-wrapper {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       width: 100%;
-      padding: 20px;
     }
 
     header {
@@ -50,12 +40,12 @@
       padding: 40px 20px 30px;
       background: linear-gradient(to right, #4A90E2, #50a6e6);
       color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      position: relative;
     }
 
-    .free-button-wrapper {
+    header .free-button-wrapper {
+      display: flex;
+      justify-content: center;
       margin-bottom: 20px;
     }
 
@@ -63,24 +53,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
     }
 
-    .profile {
+    header img.profile {
       width: 160px;
       height: 160px;
       object-fit: cover;
       border-radius: 50%;
       border: 6px solid white;
       box-shadow: var(--shadow);
-      transition: transform 0.3s;
     }
 
-    .profile:hover {
-      transform: scale(1.03);
-    }
-
-    h1 {
+    header h1 {
       font-size: 32px;
       margin: 25px 0 10px;
     }
@@ -110,31 +94,10 @@
       transform: translateY(-1px);
     }
 
-    .social-box {
-      background-color: var(--highlight-bg);
-      border-radius: 10px;
-      padding: 10px 26px;
-      box-shadow: var(--shadow);
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .social-box a img {
-      width: 21px;
-      height: 21px;
-      transition: transform 0.2s;
-    }
-
-    .social-box a img:hover {
-      transform: scale(1.15);
-    }
-
     .card {
       background: var(--card-bg);
-      border-radius: 16px;
-      padding: 40px 30px;
+      border-radius: 12px;
+      padding: 30px;
       margin-top: 40px;
       box-shadow: var(--shadow);
       width: 90%;
@@ -146,7 +109,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      margin-top: 25px;
+      margin-top: 20px;
     }
 
     .custom-button {
@@ -167,9 +130,10 @@
     }
 
     .calendar-label {
-      margin-top: 45px;
+      margin-top: 40px;
       font-size: 24px;
       font-weight: 600;
+      color: var(--text-color);
     }
 
     .calendar-container {
@@ -186,15 +150,37 @@
     }
 
     footer {
-      width: 100%;
-      text-align: center;
+      margin-top: auto;
       padding: 20px;
       font-size: 14px;
       color: #777;
+      text-align: center;
+    }
+
+    .social-box {
+      margin-top: 18px;
+      padding: 10px 26px;
+      background-color: var(--highlight-bg);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      display: inline-flex;
+      justify-content: center;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .social-box a img {
+      width: 21px;
+      height: 21px;
+      transition: transform 0.2s;
+    }
+
+    .social-box a img:hover {
+      transform: scale(1.1);
     }
 
     @media (max-width: 600px) {
-      h1 {
+      header h1 {
         font-size: 24px;
       }
 
@@ -210,41 +196,37 @@
       .calendar-container iframe {
         height: 250px;
       }
-
-      .card {
-        padding: 30px 20px;
-      }
     }
   </style>
 </head>
 <body>
+  <div class="page-wrapper">
 
-  <header>
-    <div class="free-button-wrapper">
-      <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
-    </div>
-
-    <div class="profile-and-social">
-      <img src="bona.png" alt="Instructor Photo" class="profile">
-
-      <div class="social-box">
-        <a href="https://www.instagram.com/dv_lingo/" target="_blank">
-          <img src="instagram.png" alt="Instagram">
-        </a>
-        <a href="https://www.instagram.com/dv_lingo/" target="_blank">
-          <img src="Facebook.png" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/dv_lingo/" target="_blank">
-          <img src="Tiktok.png" alt="TikTok">
-        </a>
+    <header>
+      <div class="free-button-wrapper">
+        <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
       </div>
-    </div>
 
-    <h1>Welcome to your language home</h1>
-    <p>- With each language, you live a new life -</p>
-  </header>
+      <div class="profile-and-social">
+        <img src="bona.png" alt="Instructor Photo" class="profile">
 
-  <main>
+        <div class="social-box">
+          <a href="https://www.instagram.com/dv_lingo/" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.instagram.com/dv_lingo/" target="_blank">
+            <img src="Facebook.png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/dv_lingo/" target="_blank">
+            <img src="Tiktok.png" alt="TikTok">
+          </a>
+        </div>
+      </div>
+
+      <h1>Welcome to your language home</h1>
+      <p>-With each language, you live a new life-</p>
+    </header>
+
     <div class="card">
       <h2>Manage Your Class</h2>
       <div class="button-container">
@@ -269,12 +251,11 @@
         </iframe>
       </div>
     </div>
-  </main>
 
-  <footer>
-    © Your English/Indonesian Coach · All rights reserved
-  </footer>
+    <footer>
+      © Your English/Indonesian Coach · All rights reserved
+    </footer>
 
+  </div>
 </body>
 </html>
-
