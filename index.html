@@ -4,22 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Manage Your Class</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #4A90E2;
-      --hover-color: #357ABD;
+      --primary-light: #71AEEE;
+      --primary-dark: #357ABD;
       --background-color: #f4f6f8;
       --highlight-bg: #e0e3e7;
-      --card-bg: #ffffff;
+      --card-bg: rgba(255, 255, 255, 0.6);
       --text-color: #333;
       --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
+    /* Global styles */
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--background-color);
+      font-family: 'Open Sans', sans-serif;
+      background: radial-gradient(circle at top left, rgba(74,144,226,0.1) 0%, rgba(244,246,248,1) 80%);
       color: var(--text-color);
       display: flex;
       align-items: center;
@@ -34,6 +41,7 @@
       width: 100%;
     }
 
+    /* Header */
     header {
       width: 100%;
       text-align: center;
@@ -41,18 +49,15 @@
       background: linear-gradient(to right, #4A90E2, #50a6e6);
       color: white;
       position: relative;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.2s;
     }
 
     header .free-button-wrapper {
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
-    }
-
-    .profile-and-social {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     header img.profile {
@@ -65,11 +70,13 @@
     }
 
     header h1 {
+      font-family: 'Montserrat', sans-serif;
       font-size: 32px;
       margin: 25px 0 10px;
     }
 
     header p {
+      font-family: 'Open Sans', sans-serif;
       font-size: 18px;
       margin: 0 0 14px;
     }
@@ -89,13 +96,16 @@
     }
 
     .free-classes-button:hover {
-      background-color: #e0ebf8;
+      background-color: var(--primary-light);
       transform: translateY(-1px);
     }
 
+    /* Card with glassmorphism */
     .card {
       position: relative;
       background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
       border-radius: 12px;
       padding: 30px;
       margin-top: 40px;
@@ -103,13 +113,17 @@
       width: 90%;
       max-width: 600px;
       text-align: center;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.4s;
     }
 
-    /* Texto de Free Trial en la esquina */
+    /* Free Trial badge */
     .free-trial {
       position: absolute;
       top: 20px;
       right: 20px;
+      font-family: 'Montserrat', sans-serif;
       font-weight: bold;
       color: var(--primary-color);
       cursor: pointer;
@@ -120,6 +134,7 @@
       color: orange;
     }
 
+    /* Buttons */
     .button-container {
       display: flex;
       flex-direction: column;
@@ -128,24 +143,28 @@
     }
 
     .custom-button {
-      background-color: var(--primary-color);
+      background: linear-gradient(135deg, var(--primary-color), #50a6e6);
       color: white;
       text-decoration: none;
       padding: 15px 20px;
+      font-family: 'Montserrat', sans-serif;
       font-size: 18px;
       font-weight: 500;
       border-radius: 8px;
-      transition: background-color 0.3s, transform 0.2s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       box-shadow: var(--shadow);
     }
 
     .custom-button:hover {
-      background-color: var(--hover-color);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+      background: var(--primary-dark);
     }
 
+    /* Calendar */
     .calendar-label {
       margin-top: 40px;
+      font-family: 'Montserrat', sans-serif;
       font-size: 24px;
       font-weight: 600;
       color: var(--text-color);
@@ -164,50 +183,65 @@
       border-radius: 8px;
     }
 
+    /* Footer */
     footer {
       margin-top: auto;
       padding: 20px;
       font-size: 14px;
       color: #777;
       text-align: center;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.6s;
     }
 
-    .social-box {
-      margin-top: 18px;
-      padding: 10px 26px;
-      background-color: var(--highlight-bg);
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      display: inline-flex;
-      justify-content: center;
-      gap: 14px;
-      align-items: center;
-    }
-
+    /* Social icons hover effect */
     .social-box a img {
       width: 21px;
       height: 21px;
-      transition: transform 0.2s;
+      transition: transform 0.2s, filter 0.2s;
     }
-
     .social-box a img:hover {
-      transform: scale(1.1);
+      transform: rotate(10deg);
+      filter: drop-shadow(0 0 2px orange);
     }
 
+    /* Back to top button */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary-color);
+      color: white;
+      border-radius: 50%;
+      padding: 12px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: none;
+    }
+    #back-to-top.show {
+      display: block;
+    }
+
+    /* FadeInUp animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive tweaks */
     @media (max-width: 600px) {
       header h1 {
         font-size: 24px;
       }
-
       .custom-button {
         font-size: 16px;
       }
-
       .free-classes-button {
         font-size: 12px;
         padding: 6px 10px;
       }
-
       .calendar-container iframe {
         height: 250px;
       }
@@ -243,7 +277,6 @@
     </header>
 
     <div class="card">
-      <!-- Texto de Free Trial añadido -->
       <div class="free-trial">🎁 Free Trial Class 🎁</div>
 
       <h2>Manage Your Class</h2>
@@ -273,9 +306,12 @@
       © Your English/Indonesian Coach · All rights reserved
     </footer>
 
+    <!-- Back to top button -->
+    <div id="back-to-top">↑</div>
   </div>
 
   <script>
+    // Free Trial hover emojis
     const freeTrial = document.querySelector('.free-trial');
     freeTrial.addEventListener('mouseover', () => {
       freeTrial.textContent = '🎉 Free Trial Class 🎉';
@@ -283,7 +319,13 @@
     freeTrial.addEventListener('mouseout', () => {
       freeTrial.textContent = '🎁 Free Trial Class 🎁';
     });
+
+    // Back to top functionality
+    const topBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      topBtn.classList.toggle('show', window.scrollY > 400);
+    });
+    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 </body>
 </html>
-
