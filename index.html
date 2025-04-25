@@ -98,7 +98,7 @@
       background: var(--card-bg);
       border-radius: 12px;
       padding: 30px;
-      margin-top: 40px;
+      margin-top: 80px;
       box-shadow: var(--shadow);
       width: 90%;
       max-width: 600px;
@@ -141,12 +141,15 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       display: inline-block;
       text-align: center;
-      margin-top: 40px;
+      margin-top: -30px;
+      position: relative;
+      z-index: 10;
+      transform: translateY(-40px);
     }
 
     .highlight-button:hover {
       background-color: #e68900;
-      transform: scale(1.05);
+      transform: translateY(-45px) scale(1.05);
     }
 
     .calendar-label {
@@ -216,6 +219,11 @@
       .calendar-container iframe {
         height: 250px;
       }
+
+      .highlight-button {
+        font-size: 18px;
+        padding: 14px 20px;
+      }
     }
   </style>
 </head>
@@ -247,6 +255,11 @@
       <p>-With each language, you live a new life-</p>
     </header>
 
+    <!-- Highlight button moved here -->
+    <a class="highlight-button" href="https://www.google.com/?hl=es" target="_blank">
+      🌟 Get your Free 1:1 trial lesson
+    </a>
+
     <div class="card">
       <h2>Manage Your Class</h2>
       <div class="button-container">
@@ -271,10 +284,6 @@
         </iframe>
       </div>
     </div>
-
-    <a class="highlight-button" href="https://www.google.com/?hl=es" target="_blank">
-      🌟 Get your Free 1:1 trial lesson
-    </a>
 
     <footer>
       © Your English/Indonesian Coach · All rights reserved
