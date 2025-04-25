@@ -57,28 +57,33 @@
       transform: translateY(-1px);
     }
 
-    /* --- aquí está el contenedor y el botón overlay --- */
+    /* ------------------------------------------------------
+       Nuevo: perfil envuelto para posicionar mejor el botón 
+       ------------------------------------------------------ */
     .profile-and-social {
-      position: relative;          /* necesario para el absolute */
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 24px;
     }
+    .profile-wrapper {
+      position: relative;
+      display: inline-block;
+    }
     .youtube-btn {
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 44px;     /* ajusta al tamaño real de boto youtube.png */
-      height: 44px;    /* ajusta al tamaño real de boto youtube.png */
+      top: 32px;      /* ajusta si necesitas subir/bajar */
+      right: -12px;   /* ajusta si necesitas mover más a la derecha/izquierda */
+      width: 42px;    /* diámetro real de boto youtube.png */
+      height: 42px;
       padding: 0;
       background: none;
-      border: none;    /* no añadimos borde extra */
+      border: none;
       cursor: pointer;
-      transform: translate(50%, -50%); /* centra el botón justo en la esquina */
     }
 
     header img.profile {
+      display: block;
       width: 160px;
       height: 160px;
       object-fit: cover;
@@ -197,13 +202,15 @@
       </div>
 
       <div class="profile-and-social">
-        <!-- botón superpuesto -->
-        <button class="youtube-btn"
-                onclick="window.open('https://www.youtube.com/tu-canal', '_blank')">
-          <img src="boto youtube.png" alt="YouTube">
-        </button>
-
-        <img src="bona.png" alt="Instructor Photo" class="profile">
+        <div class="profile-wrapper">
+          <!-- botón superpuesto -->
+          <button class="youtube-btn"
+                  onclick="window.open('https://www.youtube.com/tu-canal', '_blank')">
+            <img src="boto youtube.png" alt="YouTube">
+          </button>
+          <!-- foto original -->
+          <img src="bona.png" alt="Instructor Photo" class="profile">
+        </div>
         <div class="social-box">
           <a href="https://www.instagram.com/dv_lingo/" target="_blank">
             <img src="instagram.png" alt="Instagram">
@@ -268,5 +275,6 @@
   </script>
 </body>
 </html>
+
 
 
