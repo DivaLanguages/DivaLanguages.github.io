@@ -113,26 +113,37 @@
     }
 
     .free-corner-button {
-      padding: 4px 8px;
-      font-size: 10px;
+      padding: 6px 10px;
+      font-size: 11px;
       font-weight: 500;
       white-space: nowrap;
-      background-color: var(--primary-color);
-      color: white;
+      background-color: transparent;
+      color: var(--primary-color);
+      border: none;
+      border-radius: 6px;
+      box-shadow: none;
       text-decoration: none;
-      border-radius: 5px;
-      box-shadow: var(--shadow);
-      transition: background-color 0.3s, transform 0.2s;
+      transition: color 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .free-corner-button .gift::before {
+      content: "🎁";
+      transition: content 0.3s;
+    }
+
+    .free-corner-button .gift:last-of-type::before {
+      content: "🎁";
     }
 
     .free-corner-button:hover {
-      background-color: var(--hover-color);
-      transform: translateY(-1px);
+      color: orange;
     }
 
-    .card h2 {
-      margin-top: 35px; /* <-- Bajamos el título unos milímetros */
-      margin-bottom: 20px;
+    .free-corner-button:hover .gift::before {
+      content: "🎉";
     }
 
     .button-container {
@@ -259,17 +270,13 @@
 
     <div class="card">
 
-      <!-- 🎁 BOTÓN DE FREE TRIAL -->
       <div class="free-class-corner">
         <a class="custom-button free-corner-button" href="https://divalanguages.github.io/Free_Classes/" target="_blank">
-          🎁 Free Trial Class 🎁
+          <span class="gift"></span> Free Trial Class <span class="gift"></span>
         </a>
       </div>
 
-      <!-- TÍTULO -->
       <h2>Manage Your Class</h2>
-
-      <!-- BOTONES -->
       <div class="button-container">
         <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog" target="_blank">
           📘 Book a New Class
@@ -300,5 +307,4 @@
   </div>
 </body>
 </html>
-
 
