@@ -12,7 +12,6 @@
     :root {
       --primary-color: #4A90E2;
       --primary-light: #71AEEE;
-      --primary-dark:  #357ABD;
       --background-color: #f4f6f8;
       --card-bg: rgba(255, 255, 255, 0.6);
       --text-color: #333;
@@ -21,70 +20,69 @@
 
     html { scroll-behavior: smooth; }
     body {
-      margin:0; padding:0;
-      font-family:'Open Sans', sans-serif;
+      margin: 0; padding: 0;
+      font-family: 'Open Sans', sans-serif;
       background: radial-gradient(circle at top left,
         rgba(74,144,226,0.1) 0%,
         rgba(244,246,248,1) 80%);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       color: var(--text-color);
     }
-    .page-wrapper { width:100%; display:flex; flex-direction:column; align-items:center; }
+    .page-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     @keyframes fadeInUp {
-      from { opacity:0; transform:translateY(20px); }
-      to   { opacity:1; transform:translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     /* HEADER */
     header {
-      width:100%;
-      padding:40px 20px 30px;
+      width: 100%;
+      padding: 40px 20px 30px;
       background: linear-gradient(to right, var(--primary-color), var(--primary-light));
-      color:white;
-      text-align:center;
-      position:relative;
-      opacity:0;
-      animation:fadeInUp 0.8s ease-out forwards;
-      animation-delay:0.2s;
+      color: white;
+      text-align: center;
+      position: relative;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.2s;
     }
 
-    .header-top {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:20px;
+    .free-button-wrapper {
+      margin-bottom: 20px;
     }
-    .site-logo { width:120px; }
-
     .free-classes-button {
-      background:white;
-      color:var(--primary-color);
-      padding:10px 16px;
-      border:none;
-      border-radius:8px;
-      font-weight:600;
-      font-size:14px;
-      text-decoration:none;
-      box-shadow:var(--shadow);
-      transition:background 0.3s, transform 0.2s;
+      background: white;
+      color: var(--primary-color);
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, background-color 0.3s;
     }
     .free-classes-button:hover {
-      background:var(--primary-light);
-      transform:translateY(-1px);
+      background: var(--primary-light);
+      transform: translateY(-1px);
     }
 
-    /* PERFIL + PLAY */
     .profile-container {
       position: relative;
       width: 160px;
       height: 160px;
       margin: 0 auto 24px;
     }
-    .profile-container img.profile {
+    img.profile {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -111,114 +109,94 @@
     }
 
     header h1 {
-      font-family:'Montserrat',sans-serif;
-      font-size:32px;
-      margin:0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      margin: 0;
     }
 
-    /* TARJETA */
+    /* CARD */
     .card {
-      position:relative;
+      position: relative;
       background: var(--card-bg);
       backdrop-filter: blur(10px);
-      border:1px solid rgba(255,255,255,0.3);
-      border-radius:12px;
-      padding:30px;
-      margin-top:40px;
-      width:90%; max-width:600px;
-      text-align:center;
-      box-shadow:var(--shadow);
-      opacity:0;
-      animation:fadeInUp 0.8s ease-out forwards;
-      animation-delay:0.4s;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 40px;
+      width: 90%; max-width: 600px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.4s;
     }
     .free-trial {
-      position:absolute;
-      top:20px; right:20px;
-      font-weight:bold;
-      color:var(--primary-color);
-      cursor:pointer;
-      transition:color 0.3s;
-      user-select:none;
+      position: absolute;
+      top: 20px; right: 20px;
+      font-weight: bold;
+      color: var(--primary-color);
+      cursor: pointer;
+      transition: color 0.3s;
+      user-select: none;
     }
-    .free-trial:hover { color:orange; }
+    .free-trial:hover {
+      color: orange;
+    }
 
     .button-container {
-      display:flex; flex-direction:column; gap:15px; margin-top:20px;
+      display: flex; flex-direction: column; gap: 15px; margin-top: 20px;
     }
     .custom-button {
       background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-      color:white; text-decoration:none;
-      padding:15px 20px; font-size:18px; font-weight:500;
-      border-radius:8px;
-      box-shadow:var(--shadow);
-      transition:transform 0.2s, box-shadow 0.2s;
+      color: white; text-decoration: none;
+      padding: 15px 20px; font-size: 18px; font-weight: 500;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .custom-button:hover {
-      transform:translateY(-3px);
-      box-shadow:0 12px 24px rgba(0,0,0,0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
 
     .calendar-label {
-      margin-top:40px; font-size:24px; font-weight:600; color:var(--text-color);
+      margin-top: 40px; font-size: 24px; font-weight: 600; color: var(--text-color);
     }
-    .calendar-container { margin-top:20px; width:100%; }
+    .calendar-container {
+      margin-top: 20px; width: 100%;
+    }
     .calendar-container iframe {
-      width:100%; height:300px; border:none;
-      box-shadow:var(--shadow); border-radius:8px;
+      width: 100%; height: 300px; border: none;
+      box-shadow: var(--shadow); border-radius: 8px;
     }
 
     /* FOOTER */
     footer {
-      margin-top:auto; padding:20px;
-      font-size:14px; color:#777; text-align:center;
-      opacity:0;
-      animation:fadeInUp 0.8s ease-out forwards;
-      animation-delay:0.6s;
-    }
-
-    /* MODAL */
-    .modal {
-      display:none;
-      position:fixed; top:0; left:0;
-      width:100%; height:100%;
-      background:rgba(0,0,0,0.8);
-      align-items:center; justify-content:center;
-      z-index:1000;
-    }
-    .modal-content {
-      position:relative;
-      width:80%; max-width:800px;
-    }
-    .modal-content iframe {
-      width:100%; height:450px; border:none; border-radius:8px;
-    }
-    .modal .close {
-      position:absolute; top:-10px; right:-10px;
-      width:32px; height:32px; line-height:32px;
-      text-align:center; font-size:24px; font-weight:bold;
-      color:#333; background:#fff; border-radius:50%;
-      cursor:pointer; box-shadow:var(--shadow);
+      margin-top: auto; padding: 20px;
+      font-size: 14px; color: #777; text-align: center;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.6s;
     }
 
     /* BACK TO TOP */
     #back-to-top {
-      position:fixed; bottom:30px; right:30px;
-      background:var(--primary-color); color:white;
-      width:36px; height:36px; line-height:36px;
-      text-align:center; border-radius:50%;
-      cursor:pointer; box-shadow:var(--shadow);
-      font-size:18px; display:none;
+      position: fixed; bottom: 30px; right: 30px;
+      background: var(--primary-color); color: white;
+      width: 36px; height: 36px; line-height: 36px;
+      text-align: center; border-radius: 50%;
+      cursor: pointer; box-shadow: var(--shadow);
+      font-size: 18px; display: none;
     }
-    #back-to-top.show { display:block; }
+    #back-to-top.show { display: block; }
 
     /* RESPONSIVE */
-    @media(max-width:600px){
-      header h1{ font-size:24px; }
-      .custom-button{ font-size:16px; }
-      .calendar-container iframe{ height:250px; }
-      .play-icon { width:32px; height:32px; top:6px; right:6px; }
-      .profile-container { width:140px; height:140px; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 24px; }
+      .custom-button { font-size: 16px; }
+      .calendar-container iframe { height: 250px; }
+      .play-icon { width: 32px; height: 32px; top: 6px; right: 6px; }
+      .profile-container { width: 140px; height: 140px; }
     }
   </style>
 </head>
@@ -226,8 +204,7 @@
 
   <div class="page-wrapper">
     <header>
-      <div class="header-top">
-        <img src="logo.png" alt="Site Logo" class="site-logo">
+      <div class="free-button-wrapper">
         <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">
           Go to: Free Classes
         </a>
@@ -235,7 +212,8 @@
 
       <div class="profile-container">
         <img src="bona.png" alt="Instructor Photo" class="profile">
-        <div class="play-icon" title="Ver Video de Presentación"></div>
+        <!-- Enlace directo al vídeo -->
+        <a href="https://www.youtube.com/watch?v=2J9xYVcP4MA" target="_blank" class="play-icon" title="Ver Video de Presentación"></a>
       </div>
 
       <h1>Welcome to your language home</h1>
@@ -243,6 +221,7 @@
 
     <div class="card">
       <div class="free-trial">🎁 Free Trial Class 🎁</div>
+
       <h2>Manage Your Class</h2>
       <div class="button-container">
         <a class="custom-button" href="https://docs.google.com/forms/d/.../viewform" target="_blank">
@@ -264,42 +243,19 @@
 
     <footer>© Your English/Indonesian Coach · All rights reserved</footer>
 
-    <!-- Modal vídeo -->
-    <div id="video-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <iframe
-          src="https://www.youtube.com/embed/TU_VIDEO_ID"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-
     <div id="back-to-top">↑</div>
   </div>
 
   <script>
-    // Al hacer clic en el icono “play” o en el botón de modal
-    const modal = document.getElementById('video-modal');
-    const playIcon = document.querySelector('.play-icon');
-    const closeBtn = modal.querySelector('.close');
-    playIcon.addEventListener('click', () => modal.style.display = 'flex');
-    closeBtn.addEventListener('click', () => modal.style.display = 'none');
-    window.addEventListener('click', e => {
-      if (e.target === modal) modal.style.display = 'none';
-    });
-
     // Free Trial hover
     const freeTrial = document.querySelector('.free-trial');
     freeTrial.addEventListener('mouseover', () => freeTrial.textContent = '🎉 Free Trial Class 🎉');
     freeTrial.addEventListener('mouseout',  () => freeTrial.textContent = '🎁 Free Trial Class 🎁');
 
-    // Back-to-top
+    // Back-to-top button
     const topBtn = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => topBtn.classList.toggle('show', window.scrollY > 400));
-    topBtn.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+    topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 </body>
 </html>
-
