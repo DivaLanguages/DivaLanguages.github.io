@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -71,8 +71,7 @@
 
     header p {
       font-size: 18px;
-      margin: 0;
-      margin-bottom: 14px;
+      margin: 0 0 14px;
     }
 
     .free-classes-button {
@@ -95,6 +94,7 @@
     }
 
     .card {
+      position: relative;
       background: var(--card-bg);
       border-radius: 12px;
       padding: 30px;
@@ -103,47 +103,21 @@
       width: 90%;
       max-width: 600px;
       text-align: center;
-      position: relative;
     }
 
-    .free-class-corner {
+    /* Texto de Free Trial en la esquina */
+    .free-trial {
       position: absolute;
-      top: 15px;
-      right: 15px;
-    }
-
-    .free-corner-button {
-      padding: 6px 10px;
-      font-size: 11px;
-      font-weight: 500;
-      white-space: nowrap;
-      background-color: transparent;
+      top: 20px;
+      right: 20px;
+      font-weight: bold;
       color: var(--primary-color);
-      border: none;
-      border-radius: 6px;
-      box-shadow: none;
-      text-decoration: none;
+      cursor: pointer;
       transition: color 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
+      user-select: none;
     }
-
-    .free-corner-button .gift::before {
-      content: "🎁";
-      transition: content 0.3s;
-    }
-
-    .free-corner-button .gift:last-of-type::before {
-      content: "🎁";
-    }
-
-    .free-corner-button:hover {
+    .free-trial:hover {
       color: orange;
-    }
-
-    .free-corner-button:hover .gift::before {
-      content: "🎉";
     }
 
     .button-container {
@@ -269,12 +243,8 @@
     </header>
 
     <div class="card">
-
-      <div class="free-class-corner">
-        <a class="custom-button free-corner-button" href="https://divalanguages.github.io/Free_Classes/" target="_blank">
-          <span class="gift"></span> Free Trial Class <span class="gift"></span>
-        </a>
-      </div>
+      <!-- Texto de Free Trial añadido -->
+      <div class="free-trial">🎁 Free Trial Class 🎁</div>
 
       <h2>Manage Your Class</h2>
       <div class="button-container">
@@ -290,7 +260,6 @@
       </div>
 
       <h2 class="calendar-label">Check My Calendar</h2>
-
       <div class="calendar-container">
         <iframe 
           src="https://calendar.google.com/calendar/embed?src=charlottebro2003@gmail.com&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA" 
@@ -305,6 +274,16 @@
     </footer>
 
   </div>
+
+  <script>
+    const freeTrial = document.querySelector('.free-trial');
+    freeTrial.addEventListener('mouseover', () => {
+      freeTrial.textContent = '🎉 Free Trial Class 🎉';
+    });
+    freeTrial.addEventListener('mouseout', () => {
+      freeTrial.textContent = '🎁 Free Trial Class 🎁';
+    });
+  </script>
 </body>
 </html>
 
