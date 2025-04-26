@@ -20,9 +20,7 @@
       --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       padding: 0;
@@ -113,13 +111,13 @@
     }
     .dv-lingo-logo {
       position: absolute;
-      bottom: 0;                   /* align bottom of logo with bottom of photo */
+      bottom: 0;                      /* base at bottom of the circle */
       left: 50%;
-      transform: translate(-50%, 50%); /* center horizontally & move down half its height */
-      width: 80px;                 /* adjust size as needed */
+      transform: translate(-50%, 30%);/* center & pull up (30% down instead of 50%) */
+      width: 80px;                    /* adjust as needed */
       height: auto;
-      border: 0.5pt solid gold;    /* thin golden border */
-      border-radius: 6px;          /* slight rounding */
+      border: 2px solid rgb(255,192,0); /* thicker gold border */
+      border-radius: 6px;             /* slight rounding */
       pointer-events: none;
     }
 
@@ -285,7 +283,7 @@
           <a href="https://www.youtube.com/watch?v=TuVideoID" target="_blank" class="play-button">
             <img src="boto youtube.png" alt="Play Button">
           </a>
-          <!-- DV Lingo logo half overlapping the photo -->
+          <!-- DV Lingo logo half overlapping the photo, higher up -->
           <img src="DV Lingo.png" alt="DV Lingo Logo" class="dv-lingo-logo">
         </div>
 
