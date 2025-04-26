@@ -80,15 +80,18 @@
       transform: translateY(-1px);
     }
 
-    /* --- Even smaller, elegant header title --- */
+    /* --- Even more stylish, responsive header title --- */
     header h1 {
-      font-size: clamp(16px, 5vw, 20px);
+      font-size: clamp(14px, 5vw, 18px);
       margin: 15px 0 10px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
       white-space: nowrap;
+      background: linear-gradient(90deg, #FFD700, #FF8C00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.25);
       font-family: 'Montserrat', sans-serif;
     }
 
@@ -123,7 +126,7 @@
     }
     .dv-lingo-logo {
       position: absolute;
-      bottom: 0;                        
+      bottom: 0;
       left: 50%;
       transform: translate(-50%, 10%);
       width: 80px;
