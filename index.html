@@ -113,11 +113,13 @@
     }
     .dv-lingo-logo {
       position: absolute;
-      bottom: -20px;           /* Adjust to move up/down */
+      bottom: 0;                   /* align bottom of logo with bottom of photo */
       left: 50%;
-      transform: translateX(-50%);
-      width: 80px;             /* Adjust size as needed */
+      transform: translate(-50%, 50%); /* center horizontally & move down half its height */
+      width: 80px;                 /* adjust size as needed */
       height: auto;
+      border: 0.5pt solid gold;    /* thin golden border */
+      border-radius: 6px;          /* slight rounding */
       pointer-events: none;
     }
 
@@ -283,7 +285,7 @@
           <a href="https://www.youtube.com/watch?v=TuVideoID" target="_blank" class="play-button">
             <img src="boto youtube.png" alt="Play Button">
           </a>
-          <!-- DV Lingo logo centered under the photo -->
+          <!-- DV Lingo logo half overlapping the photo -->
           <img src="DV Lingo.png" alt="DV Lingo Logo" class="dv-lingo-logo">
         </div>
 
