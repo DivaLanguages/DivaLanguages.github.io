@@ -80,13 +80,15 @@
       transform: translateY(-1px);
     }
 
-    /* --- Elegant, responsive header title --- */
+    /* --- Even smaller, elegant header title --- */
     header h1 {
-      font-size: clamp(22px, 6vw, 32px);
-      margin: 20px 0 10px;
+      font-size: clamp(16px, 5vw, 20px);
+      margin: 15px 0 10px;
       font-weight: 600;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      white-space: nowrap;
       font-family: 'Montserrat', sans-serif;
     }
 
@@ -123,7 +125,7 @@
       position: absolute;
       bottom: 0;                        
       left: 50%;
-      transform: translate(-50%, 10%);  /* pulled up slightly */
+      transform: translate(-50%, 10%);
       width: 80px;
       height: auto;
       border: 2px solid rgb(255,192,0);
@@ -136,10 +138,6 @@
       flex-direction: column;
       align-items: center;
       gap: 24px;
-    }
-
-    header h2 {
-      font-family: 'Montserrat', sans-serif;
     }
 
     .social-box {
@@ -257,23 +255,6 @@
     #back-to-top.show {
       display: block;
     }
-
-    @media (max-width: 600px) {
-      /* ensure one-line fit & elegance on smartphones */
-      header h1 {
-        font-size: clamp(18px, 8vw, 24px);
-      }
-      .custom-button {
-        font-size: 16px;
-      }
-      .free-classes-button {
-        font-size: 12px;
-        padding: 6px 10px;
-      }
-      .calendar-container iframe {
-        height: 250px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -326,7 +307,7 @@
           📝 Modify a Class
         </a>
         <a class="custom-button"
-           href="https://docs.google.com/forms/d/e/1FAIpQJsiiIHT8hKJsTpb5g5HfeUfdWTMNEFXoXbUz2QgDw/viewform?usp=dialog"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSfyQ_APdatyfIHT8hKJsTpb5g5HfeUfdWTMNEFXoXbUz2QgDw/viewform?usp=dialog"
            target="_blank">
           ❌ Cancel a Class
         </a>
