@@ -12,7 +12,9 @@
     :root {
       --primary-color: #4A90E2;
       --primary-light: #71AEEE;
+      --primary-dark:  #357ABD;
       --background-color: #f4f6f8;
+      --highlight-bg: rgba(224, 227, 231, 0.6);
       --card-bg: rgba(255, 255, 255, 0.6);
       --text-color: #333;
       --shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -28,9 +30,15 @@
           rgba(244,246,248,1) 80%);
       color: var(--text-color);
       display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .page-wrapper {
+      display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
+      width: 100%;
     }
 
     @keyframes fadeInUp {
@@ -38,61 +46,41 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* Header */
     header {
       width: 100%;
-      position: relative;
-      padding: 80px 20px 60px;
+      text-align: center;
+      padding: 40px 20px 30px;
       background: linear-gradient(to right, var(--primary-color), var(--primary-light));
-      overflow: visible;
-    }
-    header h1 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      margin: 0;
       color: white;
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(16px, 6vw, 28px);
-      font-weight: 700;
-      text-align: center;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-      white-space: nowrap;
-      user-select: none;
+      position: relative;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.2s;
     }
-    .free-button-wrapper {
-      text-align: center;
-      margin-top: 20px;
-      z-index: 1;
+    header .free-button-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
     }
     .free-classes-button {
       background-color: white;
       color: var(--primary-color);
       font-weight: 600;
-      padding: 8px 14px;
+      padding: 10px 16px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 13px;
-      transition: background-color 0.3s;
+      font-size: 14px;
+      transition: background-color 0.3s, transform 0.2s;
       box-shadow: var(--shadow);
       text-decoration: none;
     }
     .free-classes-button:hover {
       background-color: var(--primary-light);
+      transform: translateY(-1px);
     }
 
-    /* Profile + Play + DV Lingo logo + Social */
-    .profile-and-social {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      margin-top: 160px; /* push below centered title */
-      z-index: 1;
-    }
+    /* --- Profile + play button + DV Lingo logo --- */
     .profile-container {
       position: relative;
       display: inline-block;
@@ -123,23 +111,39 @@
     }
     .dv-lingo-logo {
       position: absolute;
-      bottom: 0;
+      bottom: 0;                        
       left: 50%;
-      transform: translate(-50%, 10%);
+      transform: translate(-50%, 10%);  /* pulled up slightly more */
       width: 80px;
       height: auto;
       border: 2px solid rgb(255,192,0);
       border-radius: 6px;
       pointer-events: none;
     }
-    .social-box {
-      display: inline-flex;
+
+    .profile-and-social {
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 24px;
+    }
+
+    header h1, header h2 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    header h1 {
+      font-size: 32px;
+      margin: 25px 0 10px;
+    }
+    .social-box {
       padding: 10px 26px;
-      background: transparent;
+      background-color: transparent;
       border-radius: 10px;
       box-shadow: var(--shadow);
+      display: inline-flex;
+      justify-content: center;
+      gap: 14px;
+      align-items: center;
     }
     .social-box a img {
       width: 21px;
@@ -150,18 +154,19 @@
       transform: rotate(10deg);
     }
 
-    /* Card */
     .card {
+      position: relative;
       background: var(--card-bg);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,0.3);
       border-radius: 12px;
       padding: 30px;
-      margin: 60px 20px;
+      margin-top: 40px;
+      box-shadow: var(--shadow);
       width: 90%;
       max-width: 600px;
       text-align: center;
-      box-shadow: var(--shadow);
+      opacity: 0;
       animation: fadeInUp 0.8s ease-out forwards;
       animation-delay: 0.4s;
     }
@@ -217,18 +222,17 @@
       border-radius: 8px;
     }
 
-    /* Footer */
     footer {
-      margin-bottom: 20px;
-      padding: 10px;
+      margin-top: auto;
+      padding: 20px;
       font-size: 14px;
       color: #777;
       text-align: center;
+      opacity: 0;
       animation: fadeInUp 0.8s ease-out forwards;
       animation-delay: 0.6s;
     }
 
-    /* Back-to-top */
     #back-to-top {
       position: fixed;
       bottom: 30px;
@@ -247,17 +251,16 @@
       display: block;
     }
 
-    /* Responsive tweaks */
     @media (max-width: 600px) {
       header h1 {
-        font-size: clamp(14px, 8vw, 20px);
+        font-size: 24px;
+      }
+      .custom-button {
+        font-size: 16px;
       }
       .free-classes-button {
-        padding: 6px 12px;
         font-size: 12px;
-      }
-      .profile-and-social {
-        margin-top: 140px;
+        padding: 6px 10px;
       }
       .calendar-container iframe {
         height: 250px;
@@ -266,69 +269,78 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to your language home</h1>
-    <div class="free-button-wrapper">
-      <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">
-        Go to: Free Classes
-      </a>
-    </div>
-    <div class="profile-and-social">
-      <div class="profile-container">
-        <img src="bona.png" alt="Instructor Photo" class="profile">
-        <a href="https://www.youtube.com/watch?v=TuVideoID" target="_blank" class="play-button">
-          <img src="boto youtube.png" alt="Play Button">
-        </a>
-        <img src="DV Lingo.png" alt="DV Lingo Logo" class="dv-lingo-logo">
-      </div>
-      <div class="social-box">
-        <a href="https://www.instagram.com/dv_lingo/" target="_blank">
-          <img src="instagram.png" alt="Instagram">
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61573026435396" target="_blank">
-          <img src="Facebook.png" alt="Facebook">
-        </a>
-        <a href="https://www.tiktok.com/@divss75" target="_blank">
-          <img src="Tiktok.png" alt="TikTok">
+  <div class="page-wrapper">
+    <header>
+      <div class="free-button-wrapper">
+        <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">
+          Go to: Free Classes
         </a>
       </div>
-    </div>
-  </header>
 
-  <div class="card">
-    <div class="free-trial">🎁 Free Trial Class 🎁</div>
+      <div class="profile-and-social">
+        <div class="profile-container">
+          <img src="bona.png" alt="Instructor Photo" class="profile">
+          <a href="https://www.youtube.com/watch?v=TuVideoID" target="_blank" class="play-button">
+            <img src="boto youtube.png" alt="Play Button">
+          </a>
+          <!-- DV Lingo logo sitting slightly higher -->
+          <img src="DV Lingo.png" alt="DV Lingo Logo" class="dv-lingo-logo">
+        </div>
 
-    <h2>Manage Your Class</h2>
-    <div class="button-container">
-      <a class="custom-button"
-         href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog"
-         target="_blank">
-        📘 Book a New Class
-      </a>
-      <a class="custom-button"
-         href="https://docs.google.com/forms/d/e/1FAIpQLSdR-olXRpc4XBUiytXA75Igt65dJJ9D-vx5ZiCHINSM_aoNZQ/viewform?usp=dialog"
-         target="_blank">
-        📝 Modify a Class
-      </a>
-      <a class="custom-button"
-         href="https://docs.google.com/forms/d/e/1FAIpQLSfyQ_APdatyfIHT8hKJsTpb5g5HfeUfdWTMNEFXoXbUz2QgDw/viewform?usp=dialog"
-         target="_blank">
-        ❌ Cancel a Class
-      </a>
+        <div class="social-box">
+          <a href="https://www.instagram.com/dv_lingo/" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61573026435396" target="_blank">
+            <img src="Facebook.png" alt="Facebook">
+          </a>
+          <a href="https://www.tiktok.com/@divss75" target="_blank">
+            <img src="Tiktok.png" alt="TikTok">
+          </a>
+        </div>
+      </div>
+
+      <h1>Welcome to your language home</h1>
+    </header>
+
+    <div class="card">
+      <div class="free-trial">🎁 Free Trial Class 🎁</div>
+
+      <h2>Manage Your Class</h2>
+      <div class="button-container">
+        <a class="custom-button"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog"
+           target="_blank">
+          📘 Book a New Class
+        </a>
+        <a class="custom-button"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSdR-olXRpc4XBUiytXA75Igt65dJJ9D-vx5ZiCHINSM_aoNZQ/viewform?usp=dialog"
+           target="_blank">
+          📝 Modify a Class
+        </a>
+        <a class="custom-button"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSfyQ_APdatyfIHT8hKJsTpb5g5HfeUfdWTMNEFXoXbUz2QgDw/viewform?usp=dialog"
+           target="_blank">
+          ❌ Cancel a Class
+        </a>
+      </div>
+
+      <h2 class="calendar-label">Check My Calendar</h2>
+      <div class="calendar-container">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=charlottebro2003@gmail.com&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA"
+          scrolling="no">
+        </iframe>
+      </div>
     </div>
 
-    <h2 class="calendar-label">Check My Calendar</h2>
-    <div class="calendar-container">
-      <iframe
-        src="https://calendar.google.com/calendar/embed?src=charlottebro2003@gmail.com&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA"
-        scrolling="no">
-      </iframe>
-    </div>
+    <footer>
+      © Your English/Indonesian Coach · All rights reserved
+    </footer>
+
+    <div id="back-to-top">↑</div>
   </div>
 
-  <footer>© Your English/Indonesian Coach · All rights reserved</footer>
-
-  <div id="back-to-top">↑</div>
   <script>
     // Free Trial hover emoji swap
     const freeTrial = document.querySelector('.free-trial');
