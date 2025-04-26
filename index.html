@@ -82,7 +82,7 @@
       transform: translateY(-1px);
     }
 
-    /* --- Updated profile with play button --- */
+    /* --- Profile + play button + DV Lingo logo --- */
     .profile-container {
       position: relative;
       display: inline-block;
@@ -110,6 +110,15 @@
     }
     .play-button img:hover {
       transform: scale(1.1);
+    }
+    .dv-lingo-logo {
+      position: absolute;
+      bottom: -20px;           /* Adjust to move up/down */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;             /* Adjust size as needed */
+      height: auto;
+      pointer-events: none;
     }
 
     .profile-and-social {
@@ -274,6 +283,8 @@
           <a href="https://www.youtube.com/watch?v=TuVideoID" target="_blank" class="play-button">
             <img src="boto youtube.png" alt="Play Button">
           </a>
+          <!-- DV Lingo logo centered under the photo -->
+          <img src="DV Lingo.png" alt="DV Lingo Logo" class="dv-lingo-logo">
         </div>
 
         <div class="social-box">
