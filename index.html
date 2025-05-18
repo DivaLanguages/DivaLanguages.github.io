@@ -113,7 +113,7 @@
       position: absolute;
       bottom: 0;                        
       left: 50%;
-      transform: translate(-50%, 10%);  /* pulled up slightly more */
+      transform: translate(-50%, 10%);
       width: 80px;
       height: auto;
       border: 2px solid rgb(255,192,0);
@@ -179,6 +179,7 @@
       cursor: pointer;
       transition: color 0.3s;
       user-select: none;
+      text-decoration: none;
     }
     .free-trial:hover {
       color: orange;
@@ -280,10 +281,9 @@
       <div class="profile-and-social">
         <div class="profile-container">
           <img src="bona.png" alt="Instructor Photo" class="profile">
-          <a href="https://www.youtube.com/watch?v=TuVideoID" target="_blank" class="play-button">
+          <a href="https://www.youtube.com/watch?v=MwqEMhl9a4Q" target="_blank" class="play-button">
             <img src="boto youtube.png" alt="Play Button">
           </a>
-          <!-- DV Lingo logo sitting slightly higher -->
           <img src="DV Lingo.png" alt="DV Lingo Logo" class="dv-lingo-logo">
         </div>
 
@@ -304,7 +304,13 @@
     </header>
 
     <div class="card">
-      <div class="free-trial">🎁 Free Trial Class 🎁</div>
+      <a
+        class="free-trial"
+        href="https://forms.gle/x51RocTv4jamuccr5"
+        target="_blank"
+      >
+        🎁 Free Trial Class 🎁
+      </a>
 
       <h2>Manage Your Class</h2>
       <div class="button-container">
