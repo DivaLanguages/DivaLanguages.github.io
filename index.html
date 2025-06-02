@@ -413,15 +413,15 @@
       });
     }
 
-    function createReviewHTML({ Name, Comment, Rating, Photo }) {
-      const stars = '⭐'.repeat(parseInt(Rating || 0));
-      const avatar = Photo ? `<img src="${Photo}" alt="${Name}" class="review-avatar">` : '';
+    function createReviewHTML({ Name, Review, Rate, Image }) {
+      const stars = '⭐'.repeat(parseInt(Rate || 0));
+      const avatar = Image ? `<img src="${Image}" alt="${Name}" class="review-avatar">` : '';
       return `
         <div class="review">
           ${avatar}
           <div class="review-content">
             <strong>${Name || "Anonymous"}</strong><br>
-            ${Comment || ""}<br>
+            ${Review || ""}<br>
             <div class="stars">${stars}</div>
           </div>
         </div>
