@@ -57,11 +57,13 @@
       animation: fadeInUp 0.8s ease-out forwards;
       animation-delay: 0.2s;
     }
-    header .free-button-wrapper {
+
+    .free-button-wrapper {
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
     }
+
     .free-classes-button {
       background-color: white;
       color: var(--primary-color);
@@ -75,6 +77,7 @@
       box-shadow: var(--shadow);
       text-decoration: none;
     }
+
     .free-classes-button:hover {
       background-color: var(--primary-light);
       transform: translateY(-1px);
@@ -134,6 +137,7 @@
       font-size: 32px;
       margin: 25px 0 10px;
     }
+
     .social-box {
       padding: 10px 26px;
       background-color: transparent;
@@ -163,12 +167,13 @@
       margin-top: 40px;
       box-shadow: var(--shadow);
       width: 90%;
-      max-width: 800px;
+      max-width: 600px;
       text-align: center;
       opacity: 0;
       animation: fadeInUp 0.8s ease-out forwards;
       animation-delay: 0.4s;
     }
+
     .free-trial {
       position: absolute;
       top: 20px;
@@ -180,15 +185,18 @@
       user-select: none;
       text-decoration: none;
     }
+
     .free-trial:hover {
       color: orange;
     }
+
     .button-container {
       display: flex;
       flex-direction: column;
       gap: 15px;
       margin-top: 20px;
     }
+
     .custom-button {
       background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
       color: white;
@@ -200,26 +208,70 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       box-shadow: var(--shadow);
     }
+
     .custom-button:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
+
     .calendar-label {
       margin-top: 40px;
       font-size: 24px;
       font-weight: 600;
       color: var(--text-color);
     }
+
     .calendar-container {
       margin-top: 20px;
       width: 100%;
     }
+
     .calendar-container iframe {
       width: 100%;
       height: 300px;
       border: none;
       box-shadow: var(--shadow);
       border-radius: 8px;
+    }
+
+    #review-section {
+      margin-top: 40px;
+      text-align: left;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    .review {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .review:last-child {
+      border-bottom: none;
+    }
+
+    .review-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid gold;
+      box-shadow: var(--shadow);
+    }
+
+    .review-content {
+      flex: 1;
+      font-size: 16px;
+      color: var(--text-color);
+    }
+
+    .stars {
+      color: gold;
+      font-size: 18px;
+      margin-top: 4px;
     }
 
     footer {
@@ -247,23 +299,9 @@
       font-size: 18px;
       line-height: 1;
     }
+
     #back-to-top.show {
       display: block;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 10px;
-      text-align: left;
-    }
-    th {
-      background-color: var(--highlight-bg);
-    }
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
     }
 
     @media (max-width: 600px) {
@@ -287,7 +325,9 @@
   <div class="page-wrapper">
     <header>
       <div class="free-button-wrapper">
-        <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
+        <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">
+          Go to: Free Classes
+        </a>
       </div>
 
       <div class="profile-and-social">
@@ -311,6 +351,7 @@
 
     <div class="card">
       <a class="free-trial" href="https://forms.gle/x51RocTv4jamuccr5" target="_blank">🎁 Free Trial Class 🎁</a>
+
       <h2>Manage Your Class</h2>
       <div class="button-container">
         <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog" target="_blank">📘 Book a New Class</a>
@@ -324,17 +365,21 @@
       </div>
     </div>
 
-    <!-- Reviews Table -->
-    <div class="card" id="reviews-section">
-      <h2>Student Reviews</h2>
-      <div id="class-table" style="overflow-x:auto; margin-top: 20px;"></div>
+    <!-- 🧾 REVIEWS SECTION -->
+    <div id="review-section" class="card">
+      <h2>🌟 What Students Say</h2>
+      <div id="reviews-container">Loading reviews...</div>
     </div>
 
-    <footer>© Your English/Indonesian Coach · All rights reserved</footer>
+    <footer>
+      © Your English/Indonesian Coach · All rights reserved
+    </footer>
+
     <div id="back-to-top">↑</div>
   </div>
 
   <script>
+    // Free Trial hover emoji swap
     const freeTrial = document.querySelector('.free-trial');
     freeTrial.addEventListener('mouseover', () => {
       freeTrial.textContent = '🎉 Free Trial Class 🎉';
@@ -343,6 +388,7 @@
       freeTrial.textContent = '🎁 Free Trial Class 🎁';
     });
 
+    // Back-to-top button
     const topBtn = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
       topBtn.classList.toggle('show', window.scrollY > 400);
@@ -351,48 +397,49 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/YOUR_SHEET_ID/pub?gid=0&single=true&output=csv'; // 🔁 Replace with your actual published CSV link
+    // Load Reviews from Google Sheets
+    const reviewsUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSBJXnKY_fI_tWGc2yR4DFv36inpn6cOpFJPtGyjwcA6pjwyO-ElNXr6mPBfU487lD1ZPEPgsrqTtOF/pub?gid=0&single=true&output=csv";
 
-    function fetchSheetData(url) {
-      return fetch(url)
-        .then(response => response.text())
-        .then(text => {
-          const rows = text.trim().split('\n').map(row => row.split(','));
-          const headers = rows.shift();
-          return rows.map(row => Object.fromEntries(row.map((val, i) => [headers[i], val])));
+    function parseCSV(data) {
+      const lines = data.trim().split('\n');
+      const headers = lines[0].split(',');
+      return lines.slice(1).map(row => {
+        const values = row.split(',');
+        let review = {};
+        headers.forEach((h, i) => {
+          review[h.trim()] = values[i]?.trim();
         });
-    }
-
-    function renderStars(count) {
-      const filled = '★'.repeat(count);
-      const empty = '☆'.repeat(5 - count);
-      return `<span style="color: gold; font-size: 1.2em;">${filled}${empty}</span>`;
-    }
-
-    function renderTable(data) {
-      let html = `<table>
-        <thead>
-          <tr>
-            <th>Student</th>
-            <th>Review</th>
-            <th>Rating</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>`;
-      data.forEach(row => {
-        html += `<tr>
-          <td>${row.Name}</td>
-          <td>${row.Review}</td>
-          <td>${renderStars(parseInt(row.Rate) || 0)}</td>
-          <td>${row.Date}</td>
-        </tr>`;
+        return review;
       });
-      html += `</tbody></table>`;
-      document.getElementById('class-table').innerHTML = html;
     }
 
-    fetchSheetData(sheetUrl).then(renderTable);
+    function createReviewHTML({ Name, Comment, Rating, Photo }) {
+      const stars = '⭐'.repeat(parseInt(Rating || 0));
+      const avatar = Photo ? `<img src="${Photo}" alt="${Name}" class="review-avatar">` : '';
+      return `
+        <div class="review">
+          ${avatar}
+          <div class="review-content">
+            <strong>${Name || "Anonymous"}</strong><br>
+            ${Comment || ""}<br>
+            <div class="stars">${stars}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    fetch(reviewsUrl)
+      .then(response => response.text())
+      .then(csv => {
+        const reviews = parseCSV(csv);
+        const container = document.getElementById('reviews-container');
+        container.innerHTML = reviews.map(createReviewHTML).join('');
+      })
+      .catch(error => {
+        console.error("Failed to load reviews:", error);
+        document.getElementById('reviews-container').textContent = "Unable to load reviews.";
+      });
   </script>
 </body>
 </html>
+
