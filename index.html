@@ -431,7 +431,14 @@
     fetch(reviewsUrl)
       .then(response => response.text())
       .then(csv => {
-        const reviews = parseCSV(csv);
+        let reviews = parseCSV(csv);
+
+// Parse and sort by "Date" descending (latest first)
+reviews = reviews.sort((a, b) => {
+  const dateA = new Date(a["Date"]);
+  const dateB = new Date(b["Date"]);
+  return dateB - dateA; // Descending
+});
         const container = document.getElementById('reviews-container');
         const reviewLimit = 4;
 const visibleReviews = reviews.slice(0, reviewLimit).map(createReviewHTML).join('');
