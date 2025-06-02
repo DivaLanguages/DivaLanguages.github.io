@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -110,7 +110,7 @@
     }
     .dv-lingo-logo {
       position: absolute;
-      bottom: 0;                        
+      bottom: 0;
       left: 50%;
       transform: translate(-50%, 10%);
       width: 80px;
@@ -163,7 +163,7 @@
       margin-top: 40px;
       box-shadow: var(--shadow);
       width: 90%;
-      max-width: 600px;
+      max-width: 800px;
       text-align: center;
       opacity: 0;
       animation: fadeInUp 0.8s ease-out forwards;
@@ -251,6 +251,21 @@
       display: block;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: var(--highlight-bg);
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 24px;
@@ -272,9 +287,7 @@
   <div class="page-wrapper">
     <header>
       <div class="free-button-wrapper">
-        <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">
-          Go to: Free Classes
-        </a>
+        <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
       </div>
 
       <div class="profile-and-social">
@@ -287,15 +300,9 @@
         </div>
 
         <div class="social-box">
-          <a href="https://www.instagram.com/dv_lingo/" target="_blank">
-            <img src="instagram.png" alt="Instagram">
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=61573026435396" target="_blank">
-            <img src="Facebook.png" alt="Facebook">
-          </a>
-          <a href="https://www.tiktok.com/@divss75" target="_blank">
-            <img src="Tiktok.png" alt="TikTok">
-          </a>
+          <a href="https://www.instagram.com/dv_lingo/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+          <a href="https://www.facebook.com/profile.php?id=61573026435396" target="_blank"><img src="Facebook.png" alt="Facebook"></a>
+          <a href="https://www.tiktok.com/@divss75" target="_blank"><img src="Tiktok.png" alt="TikTok"></a>
         </div>
       </div>
 
@@ -317,26 +324,13 @@
       </div>
     </div>
 
-    <!-- 🔽 Zapier Table Embed Starts Here -->
-    <div class="card">
-      <h2 class="calendar-label">Class Overview Table</h2>
-      <div class="calendar-container">
-        <iframe 
-          src="https://tables.zapier.com/app/tables/t/01JSCCG0892YHJXB1DY0HH204R?secrets=MTp0YWJsZTpNdVhsXzhIbWtYOGRSYjVFamx4a3IwQWplM255bzFmUzlSUWMxcGxNaXRrOmRpaTF2cQ" 
-          width="100%" 
-          height="400" 
-          style="border:1px solid #ccc; border-radius:8px;" 
-          allowfullscreen 
-          loading="lazy">
-        </iframe>
-      </div>
+    <!-- Reviews Table -->
+    <div class="card" id="reviews-section">
+      <h2>Student Reviews</h2>
+      <div id="class-table" style="overflow-x:auto; margin-top: 20px;"></div>
     </div>
-    <!-- 🔼 Zapier Table Embed Ends Here -->
 
-    <footer>
-      © Your English/Indonesian Coach · All rights reserved
-    </footer>
-
+    <footer>© Your English/Indonesian Coach · All rights reserved</footer>
     <div id="back-to-top">↑</div>
   </div>
 
@@ -356,6 +350,49 @@
     topBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/YOUR_SHEET_ID/pub?gid=0&single=true&output=csv'; // 🔁 Replace with your actual published CSV link
+
+    function fetchSheetData(url) {
+      return fetch(url)
+        .then(response => response.text())
+        .then(text => {
+          const rows = text.trim().split('\n').map(row => row.split(','));
+          const headers = rows.shift();
+          return rows.map(row => Object.fromEntries(row.map((val, i) => [headers[i], val])));
+        });
+    }
+
+    function renderStars(count) {
+      const filled = '★'.repeat(count);
+      const empty = '☆'.repeat(5 - count);
+      return `<span style="color: gold; font-size: 1.2em;">${filled}${empty}</span>`;
+    }
+
+    function renderTable(data) {
+      let html = `<table>
+        <thead>
+          <tr>
+            <th>Student</th>
+            <th>Review</th>
+            <th>Rating</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>`;
+      data.forEach(row => {
+        html += `<tr>
+          <td>${row.Name}</td>
+          <td>${row.Review}</td>
+          <td>${renderStars(parseInt(row.Rate) || 0)}</td>
+          <td>${row.Date}</td>
+        </tr>`;
+      });
+      html += `</tbody></table>`;
+      document.getElementById('class-table').innerHTML = html;
+    }
+
+    fetchSheetData(sheetUrl).then(renderTable);
   </script>
 </body>
 </html>
