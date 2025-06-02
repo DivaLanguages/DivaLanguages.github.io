@@ -433,7 +433,37 @@
       .then(csv => {
         const reviews = parseCSV(csv);
         const container = document.getElementById('reviews-container');
-        container.innerHTML = reviews.map(createReviewHTML).join('');
+        const reviewLimit = 4;
+const visibleReviews = reviews.slice(0, reviewLimit).map(createReviewHTML).join('');
+const hiddenReviews = reviews.slice(reviewLimit).map(createReviewHTML).join('');
+
+container.innerHTML = visibleReviews;
+
+if (hiddenReviews) {
+  const showMoreBtn = document.createElement('button');
+  showMoreBtn.textContent = "Show more";
+  showMoreBtn.style.marginTop = "15px";
+  showMoreBtn.style.padding = "10px 16px";
+  showMoreBtn.style.fontSize = "14px";
+  showMoreBtn.style.cursor = "pointer";
+  showMoreBtn.style.backgroundColor = "#4A90E2";
+  showMoreBtn.style.color = "white";
+  showMoreBtn.style.border = "none";
+  showMoreBtn.style.borderRadius = "6px";
+  showMoreBtn.style.boxShadow = "var(--shadow)";
+
+  const hiddenDiv = document.createElement('div');
+  hiddenDiv.innerHTML = hiddenReviews;
+  hiddenDiv.style.display = "none";
+
+  showMoreBtn.addEventListener('click', () => {
+    hiddenDiv.style.display = "block";
+    showMoreBtn.style.display = "none";
+  });
+
+  container.appendChild(hiddenDiv);
+  container.appendChild(showMoreBtn);
+}
       })
       .catch(error => {
         console.error("Failed to load reviews:", error);
