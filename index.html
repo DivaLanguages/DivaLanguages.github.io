@@ -398,7 +398,7 @@
     });
 
     // Load Reviews from Google Sheets
-    const reviewsUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQXB1B34X6Gw92vMdgSaybUPDrcgKrk1dl34pdRSwmHqOQXT7j0dpKXRypacxcf7J-E9HQPRGbdbc_w/pub?gid=0&single=true&output=csv";
+    const reviewsUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSBJXnKY_fI_tWGc2yR4DFv36inpn6cOpFJPtGyjwcA6pjwyO-ElNXr6mPBfU487lD1ZPEPgsrqTtOF/pub?gid=0&single=true&output=csv";
 
     function parseCSV(data) {
       const lines = data.trim().split('\n');
@@ -435,8 +435,8 @@
 
 // Parse and sort by "Date" descending (latest first)
 reviews = reviews.sort((a, b) => {
-  const dateA = new Date(a["Date_of_review"]);
-  const dateB = new Date(b["Date_of_review"]);
+  const dateA = new Date(a["Date"]);
+  const dateB = new Date(b["Date"]);
   return dateB - dateA; // Descending
 });
         const container = document.getElementById('reviews-container');
