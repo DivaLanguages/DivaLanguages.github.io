@@ -416,7 +416,6 @@
     function createReviewHTML({ Name, Review, Rate, Image }) {
       const stars = '⭐'.repeat(parseInt(Rate || 0));
       const avatar = Image ? `<img src="${Image}" alt="${Name}" class="review-avatar">` : '';
-      const emailLine = Email ? `<br><em>${Email}</em>` : '';
       return `
         <div class="review">
           ${avatar}
@@ -480,4 +479,3 @@ if (hiddenReviews) {
   </script>
 </body>
 </html>
-
