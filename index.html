@@ -25,15 +25,14 @@
       margin: 0;
       padding: 0;
       font-family: 'Open Sans', sans-serif;
-      background: radial-gradient(circle at top left,
-          rgba(74,144,226,0.1) 0%,
-          rgba(244,246,248,1) 80%);
+      background: radial-gradient(circle at top left, rgba(74,144,226,0.1) 0%, rgba(244,246,248,1) 80%);
       color: var(--text-color);
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
     }
+
     .page-wrapper {
       display: flex;
       flex-direction: column;
@@ -87,6 +86,7 @@
       position: relative;
       display: inline-block;
     }
+
     .profile {
       width: 160px;
       height: 160px;
@@ -95,6 +95,7 @@
       border: 6px solid white;
       box-shadow: var(--shadow);
     }
+
     .play-button {
       position: absolute;
       top: 5px;
@@ -102,15 +103,18 @@
       width: 40px;
       height: 40px;
     }
+
     .play-button img {
       width: 100%;
       height: auto;
       cursor: pointer;
       transition: transform 0.2s ease;
     }
+
     .play-button img:hover {
       transform: scale(1.1);
     }
+
     .dv-lingo-logo {
       position: absolute;
       bottom: 0;
@@ -133,6 +137,7 @@
     header h1, header h2 {
       font-family: 'Montserrat', sans-serif;
     }
+
     header h1 {
       font-size: 32px;
       margin: 25px 0 10px;
@@ -148,11 +153,13 @@
       gap: 14px;
       align-items: center;
     }
+
     .social-box a img {
       width: 21px;
       height: 21px;
       transition: transform 0.2s;
     }
+
     .social-box a img:hover {
       transform: rotate(10deg);
     }
@@ -174,7 +181,8 @@
       animation-delay: 0.4s;
     }
 
-    .free-trial {
+    .free-trial,
+    .review-button {
       position: absolute;
       top: 20px;
       right: 20px;
@@ -186,7 +194,8 @@
       text-decoration: none;
     }
 
-    .free-trial:hover {
+    .free-trial:hover,
+    .review-button:hover {
       color: orange;
     }
 
@@ -239,6 +248,7 @@
       text-align: left;
       animation: fadeInUp 0.8s ease-out forwards;
       animation-delay: 0.5s;
+      position: relative;
     }
 
     .review {
@@ -325,40 +335,31 @@
   <div class="page-wrapper">
     <header>
       <div class="free-button-wrapper">
-        <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">
-          Go to: Free Classes
-        </a>
+        <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
       </div>
-
       <div class="profile-and-social">
         <div class="profile-container">
           <img src="bona.png" alt="Instructor Photo" class="profile">
-          <a href="https://www.youtube.com/watch?v=MwqEMhl9a4Q" target="_blank" class="play-button">
-            <img src="boto youtube.png" alt="Play Button">
-          </a>
+          <a href="https://www.youtube.com/watch?v=MwqEMhl9a4Q" target="_blank" class="play-button"><img src="boto youtube.png" alt="Play Button"></a>
           <img src="DV Lingo.png" alt="DV Lingo Logo" class="dv-lingo-logo">
         </div>
-
         <div class="social-box">
           <a href="https://www.instagram.com/dv_lingo/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
           <a href="https://www.facebook.com/profile.php?id=61573026435396" target="_blank"><img src="Facebook.png" alt="Facebook"></a>
           <a href="https://www.tiktok.com/@divss75" target="_blank"><img src="Tiktok.png" alt="TikTok"></a>
         </div>
       </div>
-
       <h1>Learn. Connect. Belong.</h1>
     </header>
 
     <div class="card">
       <a class="free-trial" href="https://forms.gle/x51RocTv4jamuccr5" target="_blank">🎁 Free Trial Class 🎁</a>
-
       <h2>Manage Your Class</h2>
       <div class="button-container">
         <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfvw8vyKRF9d2eoGOzTk3Z-XFmjgSClnhQ6aKmdL03MndyDQA/viewform?usp=dialog" target="_blank">📘 Book a New Class</a>
         <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdR-olXRpc4XBUiytXA75Igt65dJJ9D-vx5ZiCHINSM_aoNZQ/viewform?usp=dialog" target="_blank">📝 Modify a Class</a>
         <a class="custom-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfyQ_APdatyfIHT8hKJsTpb5g5HfeUfdWTMNEFXoXbUz2QgDw/viewform?usp=dialog" target="_blank">❌ Cancel a Class</a>
       </div>
-
       <h2 class="calendar-label">Check My Calendar</h2>
       <div class="calendar-container">
         <iframe src="https://calendar.google.com/calendar/embed?src=charlottebro2003@gmail.com&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA" scrolling="no"></iframe>
@@ -367,7 +368,7 @@
 
     <!-- 🧾 REVIEWS SECTION -->
     <div id="review-section" class="card">
-      <a class="free-trial" href="https://docs.google.com/forms/d/e/1FAIpQLSf0YvzLUiqX57ThQFHZuAQmhAOQp0FxQWWuzmfkKNj75cszBQ/viewform" target="_blank">➕ Add Your Review</a>
+      <a class="review-button" href="https://docs.google.com/forms/d/e/1FAIpQLSf0YvzLUiqX57ThQFHZuAQmhAOQp0FxQWWuzmfkKNj75cszBQ/viewform" target="_blank">➕ Add Your Review</a>
       <h2>🌟 What Students Say</h2>
       <div id="reviews-container">Loading reviews...</div>
     </div>
@@ -377,106 +378,88 @@
     </footer>
 
     <div id="back-to-top">↑</div>
-  </div>
 
-  <script>
-    // Free Trial hover emoji swap
-    const freeTrial = document.querySelector('.free-trial');
-    freeTrial.addEventListener('mouseover', () => {
-      freeTrial.textContent = '🎉 Free Trial Class 🎉';
-    });
-    freeTrial.addEventListener('mouseout', () => {
-      freeTrial.textContent = '🎁 Free Trial Class 🎁';
-    });
+    <script>
+      const topBtn = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        topBtn.classList.toggle('show', window.scrollY > 400);
+      });
+      topBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
 
-    // Back-to-top button
-    const topBtn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      topBtn.classList.toggle('show', window.scrollY > 400);
-    });
-    topBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+      const reviewsUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSBJXnKY_fI_tWGc2yR4DFv36inpn6cOpFJPtGyjwcA6pjwyO-ElNXr6mPBfU487lD1ZPEPgsrqTtOF/pub?gid=0&single=true&output=csv";
 
-    // Load Reviews from Google Sheets
-    const reviewsUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSBJXnKY_fI_tWGc2yR4DFv36inpn6cOpFJPtGyjwcA6pjwyO-ElNXr6mPBfU487lD1ZPEPgsrqTtOF/pub?gid=0&single=true&output=csv";
-
-    function parseCSV(data) {
-      const lines = data.trim().split('\n');
-      const headers = lines[0].split(',');
-      return lines.slice(1).map(row => {
-        const values = row.split(',');
-        let review = {};
-        headers.forEach((h, i) => {
-          review[h.trim()] = values[i]?.trim();
+      function parseCSV(data) {
+        const lines = data.trim().split('\n');
+        const headers = lines[0].split(',');
+        return lines.slice(1).map(row => {
+          const values = row.split(',');
+          let review = {};
+          headers.forEach((h, i) => {
+            review[h.trim()] = values[i]?.trim();
+          });
+          return review;
         });
-        return review;
-      });
-    }
+      }
 
-    function createReviewHTML({ Name, Review, Rate, Image }) {
-      const stars = '⭐'.repeat(parseInt(Rate || 0));
-      const avatar = Image ? `<img src="${Image}" alt="${Name}" class="review-avatar">` : '';
-      return `
-        <div class="review">
-          ${avatar}
-          <div class="review-content">
-            <strong>${Name || "Anonymous"}</strong><br>
-            ${Review || ""}<br>
-            <div class="stars">${stars}</div>
+      function createReviewHTML({ Name, Review, Rate, Image }) {
+        const stars = '⭐'.repeat(parseInt(Rate || 0));
+        const avatar = Image ? `<img src="${Image}" alt="${Name}" class="review-avatar">` : '';
+        return `
+          <div class="review">
+            ${avatar}
+            <div class="review-content">
+              <strong>${Name || "Anonymous"}</strong><br>
+              ${Review || ""}<br>
+              <div class="stars">${stars}</div>
+            </div>
           </div>
-        </div>
-      `;
-    }
+        `;
+      }
 
-    fetch(reviewsUrl)
-      .then(response => response.text())
-      .then(csv => {
-        let reviews = parseCSV(csv);
+      fetch(reviewsUrl)
+        .then(response => response.text())
+        .then(csv => {
+          let reviews = parseCSV(csv);
+          reviews = reviews.sort((a, b) => new Date(b["Date"]) - new Date(a["Date"]));
+          const container = document.getElementById('reviews-container');
+          const reviewLimit = 4;
+          const visibleReviews = reviews.slice(0, reviewLimit).map(createReviewHTML).join('');
+          const hiddenReviews = reviews.slice(reviewLimit).map(createReviewHTML).join('');
+          container.innerHTML = visibleReviews;
 
-// Parse and sort by "Date" descending (latest first)
-reviews = reviews.sort((a, b) => {
-  const dateA = new Date(a["Date"]);
-  const dateB = new Date(b["Date"]);
-  return dateB - dateA; // Descending
-});
-        const container = document.getElementById('reviews-container');
-        const reviewLimit = 4;
-const visibleReviews = reviews.slice(0, reviewLimit).map(createReviewHTML).join('');
-const hiddenReviews = reviews.slice(reviewLimit).map(createReviewHTML).join('');
+          if (hiddenReviews) {
+            const showMoreBtn = document.createElement('button');
+            showMoreBtn.textContent = "Show more";
+            showMoreBtn.style.marginTop = "15px";
+            showMoreBtn.style.padding = "10px 16px";
+            showMoreBtn.style.fontSize = "14px";
+            showMoreBtn.style.cursor = "pointer";
+            showMoreBtn.style.backgroundColor = "#4A90E2";
+            showMoreBtn.style.color = "white";
+            showMoreBtn.style.border = "none";
+            showMoreBtn.style.borderRadius = "6px";
+            showMoreBtn.style.boxShadow = "var(--shadow)";
 
-container.innerHTML = visibleReviews;
+            const hiddenDiv = document.createElement('div');
+            hiddenDiv.innerHTML = hiddenReviews;
+            hiddenDiv.style.display = "none";
 
-if (hiddenReviews) {
-  const showMoreBtn = document.createElement('button');
-  showMoreBtn.textContent = "Show more";
-  showMoreBtn.style.marginTop = "15px";
-  showMoreBtn.style.padding = "10px 16px";
-  showMoreBtn.style.fontSize = "14px";
-  showMoreBtn.style.cursor = "pointer";
-  showMoreBtn.style.backgroundColor = "#4A90E2";
-  showMoreBtn.style.color = "white";
-  showMoreBtn.style.border = "none";
-  showMoreBtn.style.borderRadius = "6px";
-  showMoreBtn.style.boxShadow = "var(--shadow)";
+            showMoreBtn.addEventListener('click', () => {
+              hiddenDiv.style.display = "block";
+              showMoreBtn.style.display = "none";
+            });
 
-  const hiddenDiv = document.createElement('div');
-  hiddenDiv.innerHTML = hiddenReviews;
-  hiddenDiv.style.display = "none";
-
-  showMoreBtn.addEventListener('click', () => {
-    hiddenDiv.style.display = "block";
-    showMoreBtn.style.display = "none";
-  });
-
-  container.appendChild(hiddenDiv);
-  container.appendChild(showMoreBtn);
-}
-      })
-      .catch(error => {
-        console.error("Failed to load reviews:", error);
-        document.getElementById('reviews-container').textContent = "Unable to load reviews.";
-      });
-  </script>
+            container.appendChild(hiddenDiv);
+            container.appendChild(showMoreBtn);
+          }
+        })
+        .catch(error => {
+          console.error("Failed to load reviews:", error);
+          document.getElementById('reviews-container').textContent = "Unable to load reviews.";
+        });
+    </script>
+  </div>
 </body>
 </html>
