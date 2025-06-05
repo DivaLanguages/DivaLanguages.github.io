@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -314,6 +314,52 @@
       display: block;
     }
 
+    /* New styles for the price section */
+    .price-section {
+      position: relative;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      padding: 30px;
+      margin-top: 40px;
+      box-shadow: var(--shadow);
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+
+    .price-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .price-button {
+      background: linear-gradient(135deg, #FFA500, #FF8C00);
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: var(--shadow);
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .price-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 24px;
@@ -328,11 +374,18 @@
       .calendar-container iframe {
         height: 500px;
       }
+      .price-tag {
+        font-size: 28px;
+      }
+      .price-button {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="page-wrapper">
+
     <header>
       <div class="free-button-wrapper">
         <a href="https://divalanguages.github.io/Free_Classes/" target="_blank" class="free-classes-button">Go to: Free Classes</a>
@@ -351,6 +404,12 @@
       </div>
       <h1>Learn. Connect. Belong.</h1>
     </header>
+
+    <!-- New price section -->
+    <div class="price-section">
+      <h2 class="price-tag">Only 7$/Class</h2>
+      <button class="price-button">Book Now</button>
+    </div>
 
     <div class="card">
       <a class="free-trial" href="https://forms.gle/x51RocTv4jamuccr5" target="_blank">🎁 Free Trial Class 🎁</a>
@@ -406,16 +465,14 @@
       function createReviewHTML({ Name, Review, Rate, Image }) {
         const stars = '⭐'.repeat(parseInt(Rate || 0));
         const avatar = Image ? `<img src="${Image}" alt="${Name}" class="review-avatar">` : '';
-        return `
-          <div class="review">
+        return `<div class="review">
             ${avatar}
             <div class="review-content">
               <strong>${Name || "Anonymous"}</strong><br>
               ${Review || ""}<br>
               <div class="stars">${stars}</div>
             </div>
-          </div>
-        `;
+          </div>`;
       }
 
       fetch(reviewsUrl)
